@@ -158,8 +158,14 @@ tools['tanvirtin/vgit.nvim'] = { -- gitsign has similar features
 }
 
 tools["tpope/vim-fugitive"] = {
-  cmd = {"Gvsplit", "Git", "Gedit", "Gstatus", "Gdiffsplit", "Gvdiffsplit"},
+  cmd = {"Gvsplit", "Git", "Gedit", "Gstatus", "Gdiffsplit", "Gvdiffsplit",
+  "GV", "GV!", "GV! --patch", "G log --patch",},
   opt = true
+}
+
+tools["junegunn/gv.vim"] = {
+    after = "vim-fugitive",
+    opt = true,
 }
 
 tools["rmagatti/auto-session"] = {config = conf.session}
