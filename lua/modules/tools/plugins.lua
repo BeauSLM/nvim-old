@@ -158,8 +158,7 @@ tools['tanvirtin/vgit.nvim'] = { -- gitsign has similar features
 }
 
 tools["tpope/vim-fugitive"] = {
-  cmd = {"Gvsplit", "Git", "Gedit", "Gstatus", "Gdiffsplit", "Gvdiffsplit",
-  "GV", "GV!", "GV! --patch", "G log --patch",},
+  cmd = {"Gvsplit", "Git", "Gedit", "Gstatus", "Gdiffsplit", "Gvdiffsplit", "GV", "GV!", "GV! --patch", "G log --patch",},
   opt = true
 }
 

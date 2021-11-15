@@ -122,7 +122,7 @@ local keys = {
 
   -- navigation
   ["n|<C-q>"] = map_cr("q!"),
-  ["n|<leader>bd"] = map_cr("bd"),
+  ["n|<Leader>bd"] = map_cr("bd"),
   ["t|<C-o>"] = map_cmd("<C-\\><C-n><C-o>"),
   ["t|<C-q>"] = map_cmd("<C-\\><C-n>:bd!<CR>"),
 
@@ -137,6 +137,24 @@ local keys = {
   -- ["n|<C-h>"] = map_cmd("<C-w>h"),
   -- ["n|<C-j>"] = map_cmd("<C-w>j"),
   -- ["n|<C-k>"] = map_cmd("<C-w>k"),
+
+  -- fugitive maps
+  ["n|<Leader>G"] = map_cr("Git"),
+  ["n|<Leader>gd"] = map_cr("Git diff"),
+  ["n|<Leader>gb"] = map_cr("Git blame"),
+  ["n|<Leader>gj"] = map_cr("diffget \\3"),
+  ["n|<Leader>gf"] = map_cr("diffget \\2"),
+  ["n|<Leader>gl"] = map_cr("GV"),
+  ["v|<Leader>gl"] = map_cr("GV"),
+  ["n|<Leader>gv"] = map_cr("GV!"),
+  ["v|<Leader>gv"] = map_cr("GV!"),
+  ["n|<Leader>gp"] = map_cr("GV! --patch"),
+  ["v|<Leader>gp"] = map_cr("GV! --patch"),
+  ["v|<Leader>gL"] = map_cr("G log --patch"),
+
+  ["n|<Leader>ga"] = map_cr("Git fetch --all"),
+  ["n|<Leader>grum"] = map_cr("Git rebase upstream/master"),
+  ["n|<Leader>grom"] = map_cr("Git rebase origin/master"),
 }
 
 --
