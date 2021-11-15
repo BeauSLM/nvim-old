@@ -39,7 +39,7 @@ function options:load_options()
       grepformat = "%f:%l:%m,%m\\ %f\\ match%ts,%f", -- "%f:%l:%c:%m";
       shortmess = "aotTIcF",
       -- showcmd        = false;
-      cmdheight = 1,
+      cmdheight = 2,
       splitbelow = true, -- Horizontal windows should split to bottom
       splitright = true, -- Vertical windows should be split to right
       backspace = "indent,eol,start", -- Makes backspace key more powerful.
@@ -55,7 +55,8 @@ function options:load_options()
       breakindent = true, -- Make it so that long lines wrap smartly
       smartindent = true, -- use intelligent indentation
       showmatch = true, -- highlight matching braces
-      numberwidth = 3
+      numberwidth = 3,
+      scrolloff = 12,
     }
 
     self.window_local = {
