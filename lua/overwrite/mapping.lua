@@ -82,8 +82,8 @@ local keys = {
   ["xon|F"] = map_cmd("<cmd>lua  Line_ft('F')<cr>"),
   ["xon|t"] = map_cmd("<cmd>lua  Line_ft('t')<cr>"),
   ["xon|T"] = map_cmd("<cmd>lua  Line_ft('T')<cr>"),
-  ["n|s"] = map_cmd("<cmd>lua hop1(1)<cr>"),
-  ["n|S"] = map_cmd("<cmd>lua hop1()<cr>"),
+  -- ["n|s"] = map_cmd("<cmd>lua hop1(1)<cr>"),
+  -- ["n|S"] = map_cmd("<cmd>lua hop1()<cr>"),
   ["x|s"] = map_cmd("<cmd>lua hop1(1)<CR>"):with_silent(),
   ["x|S"] = map_cmd("<cmd>lua hop1()<CR>"):with_silent(),
   -- ["v|<M-s>"] = map_cmd("<cmd>lua require'hop'.hint_char1()<cr>"):with_silent():with_expr(),
@@ -115,6 +115,28 @@ local keys = {
   -- session
   -- ["n|<Leader>ss"] = map_cu('SessionSave'):with_noremap(),
   -- ["n|<Leader>sl"] = map_cu('SessionLoad'):with_noremap(),
+
+  -- MEMEME
+
+  ["n|Y"] = map_cmd("y$"),
+
+  -- navigation
+  ["n|<C-q>"] = map_cr("q!"),
+  ["n|<leader>bd"] = map_cr("bd"),
+  ["t|<C-o>"] = map_cmd("<C-\\><C-n><C-o>"),
+  ["t|<C-q>"] = map_cmd("<C-\\><C-n>:bd!<CR>"),
+
+  -- ["t|<C-h>"] = map_cmd("<C-\\><C-n><C-w>h"),
+  -- ["t|<C-j>"] = map_cmd("<C-\\><C-n><C-w>j"),
+  -- ["t|<C-k>"] = map_cmd("<C-\\><C-n><C-w>k"),
+  -- ["t|<C-l>"] = map_cmd("<C-\\><C-n><C-w>l"),
+  -- ["i|<C-h>"] = map_cmd("<C-\\><C-n><C-w>h"),
+  -- ["i|<C-j>"] = map_cmd("<C-\\><C-n><C-w>j"),
+  -- ["i|<C-k>"] = map_cmd("<C-\\><C-n><C-w>k"),
+  -- ["i|<C-l>"] = map_cmd("<C-\\><C-n><C-w>l"),
+  -- ["n|<C-h>"] = map_cmd("<C-w>h"),
+  -- ["n|<C-j>"] = map_cmd("<C-w>j"),
+  -- ["n|<C-k>"] = map_cmd("<C-w>k"),
 }
 
 --

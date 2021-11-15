@@ -7,7 +7,7 @@ PLUGINS
 - git worktree (prime)
 - autopairs
 - tsrainbow
-- harpoon
+- harpoon (???)
 - refactoring
 - tabout
 - vim-be-good
