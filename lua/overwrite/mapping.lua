@@ -129,6 +129,7 @@ local keys = {
   -- navigation
   ["n|<C-q>"] = map_cr("q!"),
   ["n|<Leader>bd"] = map_cr("bd"),
+  ["n|Q"] = map_cr("w<CR>:bd"),
   ["t|<C-o>"] = map_cmd("<C-\\><C-n><C-o>"),
   ["t|<C-q>"] = map_cmd("<C-\\><C-n>:bd!<CR>"),
 
@@ -277,5 +278,5 @@ end
 
 vim.cmd([[command! -nargs=*  DebugOpen lua require"modules.lang.dap".prepare()]])
 -- Use `git ls-files` for git files, use `find ./ *` for all files under work directory.
---
+-- some changes
 return K
