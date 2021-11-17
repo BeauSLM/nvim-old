@@ -59,6 +59,8 @@ local keys = {
   ["v|<Leader><Leader>r"] = map_cmd("v:lua.run_or_test()"):with_expr(),
 
   ["n|<Leader>Bp"] = map_cu("BufferLinePick"):with_noremap():with_silent(),
+  ["n|<Leader><Tab>"] = map_cu("BufferLineCycleNext"):with_noremap():with_silent(),
+  ["n|<Leader><S-Tab>"] = map_cu("BufferLineCyclePrev"):with_noremap():with_silent(),
 
   ["n|<Leader>di"] = map_cr("<cmd>lua require'dap.ui.variables'.hover()"):with_expr(),
   ["n|<Leader>dw"] = map_cr("<cmd>lua require'dap.ui.widgets'.hover()"):with_expr(), -- TODO: another key?
