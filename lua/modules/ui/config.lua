@@ -271,7 +271,7 @@ function config.nvcode()
 end
 
 function config.sonokai()
-  local opt = {"andromeda", "default", "andromeda", "shusia", "maia", "atlantis"}
+  local opt = {"andromeda", "default", "andromeda", "shusia", "maia", "atlantis", "espresso"}
   local v = opt[math.random(1, #opt)]
   vim.g.sonokai_style = v
   vim.g.sonokai_enable_italic = 1
