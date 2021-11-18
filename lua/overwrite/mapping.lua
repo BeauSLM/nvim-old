@@ -48,7 +48,7 @@ local keys = {
   ["n|<Leader>ff"] = map_cu("Clap files ++finder=rg --ignore --hidden --files"):with_noremap():with_silent(),
   ["n|<M-g>"] = map_cu("Clap gfiles"):with_noremap():with_silent(),
   ["n|<Leader>fw"] = map_cu("Clap grep2 ++query=<cword>"):with_noremap():with_silent(),
-  ["n|<M-h>"] = map_cu("Clap history"):with_noremap():with_silent(),
+  ["n|<C-h>"] = map_cu("Clap history"):with_noremap():with_silent(),
 
   -- ["n|<Leader>fW"] = map_cu("Clap windows"):with_noremap():with_silent(),
   -- ["n|<Leader>fl"] = map_cu("Clap loclist"):with_noremap():with_silent(),
@@ -124,13 +124,12 @@ local keys = {
 
   -- MEMEME
 
-  ["n|Y"] = map_cmd("y$"),
-
   -- navigation
   ["n|<C-q>"] = map_cr("q!"),
   ["n|<Leader>bd"] = map_cr("bd"),
   ["n|Q"] = map_cr("w<CR>:bd"),
   ["t|<C-o>"] = map_cmd("<C-\\><C-n><C-o>"),
+  ["t|<C-q>"] = map_cr("<C-\\><C-n>:bd!"),
 
   ["t|<M-h>"] = map_cmd("<C-\\><C-n><C-w>h"),
   ["t|<M-j>"] = map_cmd("<C-\\><C-n><C-w>j"),
@@ -169,6 +168,9 @@ vim.cmd([[vnoremap  <leader>y  "+y]])
 vim.cmd([[nnoremap  <leader>Y  "+yg_]])
 -- vim.cmd([[vnoremap  <M-c>  "+y]])
 -- vim.cmd([[nnoremap  <M-c>  "+yg_]])
+
+vim.cmd([[vnoremap J :m '>+1<CR>gv=gv]])
+vim.cmd([[vnoremap K :m '<-2<CR>gv=gv]])
 
 vim.cmd([[vnoremap  <D-c>  *+y]])
 vim.cmd([[nnoremap  <D-c>  *+yg_]])
