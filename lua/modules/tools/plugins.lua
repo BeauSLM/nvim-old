@@ -7,6 +7,7 @@ tools["kristijanhusak/vim-dadbod-ui"] = {
   requires = {"tpope/vim-dadbod", ft = {'sql'}},
   opt = true,
   setup = function()
+    -- TODO: fix this shit lmao fuck me
     vim.g.dbs = {
       eraser = 'postgres://postgres:password@localhost:5432/eraser_local',
       staging = 'postgres://postgres:password@localhost:5432/my-staging-db',
@@ -158,13 +159,16 @@ tools['tanvirtin/vgit.nvim'] = { -- gitsign has similar features
 }
 
 tools["tpope/vim-fugitive"] = {
-  cmd = {"Gvsplit", "Git", "Gedit", "Gstatus", "Gdiffsplit", "Gvdiffsplit", "GV", "GV!", "GV! --patch", "G log --patch",},
+  cmd = {"Gvsplit", "Git", "Gedit", "Gstatus", "Gdiffsplit", "Gvdiffsplit",},
   opt = true
 }
 
 tools["junegunn/gv.vim"] = {
-    after = "vim-fugitive",
-    opt = true,
+  cmd = {"GV", "GV!", "GV! --patch", "G log --patch",},
+  config = function ()
+    require"packer".loader("vim-fugitive")
+  end,
+  opt = true,
 }
 
 tools["rmagatti/auto-session"] = {config = conf.session}
