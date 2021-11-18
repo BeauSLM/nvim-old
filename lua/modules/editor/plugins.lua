@@ -59,6 +59,7 @@ editor["rrethy/vim-hexokinase"] = {
 -- <A-h>   Move current character/selection left
 -- <A-l>   Move current character/selection right
 editor["matze/vim-move"] = {
+  disable = true,
   opt = true,
   event = {"CursorMoved", "CursorMovedI"}
   -- fn = {'<Plug>MoveBlockDown', '<Plug>MoveBlockUp', '<Plug>MoveLineDown', '<Plug>MoveLineUp'}
