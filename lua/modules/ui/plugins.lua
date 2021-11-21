@@ -16,6 +16,25 @@ ui["windwp/windline.nvim"] = {
   opt = true
 }
 
+ui["itchyny/lightline.vim"] = {
+  event = "UIEnter",
+  config = function ()
+    vim.cmd([[
+    let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
+
+    ]])
+  end,
+  opt = true
+}
+
 ui["lambdalisue/glyph-palette.vim"] = {}
 
 ui["akinsho/bufferline.nvim"] = {
