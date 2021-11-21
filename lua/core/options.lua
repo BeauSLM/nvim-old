@@ -68,13 +68,13 @@ local function load_options()
     completeopt    = "menuone,noselect";
     jumpoptions    = "stack";
     showmode       = false;
-    shortmess      = "aotTIcF"; 
+    shortmess      = "aotTIcF";
     scrolloff      = 2;
     sidescrolloff  = 5;
     foldlevelstart = 99;
     ruler          = false;
     list           = true;
-    showtabline    = 2;
+    -- showtabline    = 2;
     winwidth       = 30;
     winminwidth    = 10;
     pumheight      = 15;
