@@ -40,10 +40,10 @@ local keys = {
   -- Lsp mapp work when insertenter and lsp start
   --
   -- ["n|<Leader>tc"] = map_cu("Clap colors"):with_noremap():with_silent(),
-  -- ["n|<Leader>bb"] = map_cu("Clap buffers"):with_noremap():with_silent(),
+  ["n|<Leader>bb"] = map_cu("Clap buffers"):with_noremap():with_silent(),
   -- ["n|<Leader>ff"] = map_cu("Clap grep"):with_noremap():with_silent(),
   ["n|<Leader>fb"] = map_cu("Clap marks"):with_noremap():with_silent(),
-  -- ["n|<C-x><C-f>"] = map_cu("Clap filer"):with_noremap():with_silent(),
+  ["n|<C-x><C-f>"] = map_cu("Clap filer"):with_noremap():with_silent(),
   ["n|<Leader>ff"] = map_cu("Clap files ++finder=rg --ignore --hidden --files"):with_noremap():with_silent(),
   ["n|<M-g>"] = map_cu("Clap gfiles"):with_noremap():with_silent(),
   ["n|<Leader>fw"] = map_cu("Clap grep2 ++query=<cword>"):with_noremap():with_silent(),
@@ -70,14 +70,6 @@ local keys = {
   ["n|<Leader><Leader>s"] = map_cr("SplitjoinSplit"),
   ["n|<Leader><Leader>j"] = map_cr("SplitjoinJoin"),
   ["n|<F13>"] = map_cr("NvimTreeToggle"),
-  -- ["n|hW"] = map_cr("HopWordBC"),
-  -- ["n|hw"] = map_cr("HopWordAC"),
-  -- ["n|hl"] = map_cr("HopLineStartAC"),
-  -- ["n|hL"] = map_cr("HopLineStartBC"),
-  -- ["n|t"] = map_cr("HopChar1CurrentLineAC"),
-  -- ["n|f"] = map_cr("HopChar1CurrentLineAC"),
-  -- ["xon|t"] = map_cmd("<cmd>HopChar1CurrentLineAC<CR>"):with_silent(),
-  -- ["xon|T"] = map_cmd("<cmd>HopChar1CurrentLineBC<CR>"):with_silent(),
 
   ["xon|f"] = map_cmd("<cmd>lua  Line_ft('f')<cr>"),
   ["xon|F"] = map_cmd("<cmd>lua  Line_ft('F')<cr>"),
