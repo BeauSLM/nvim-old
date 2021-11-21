@@ -159,12 +159,10 @@ tools['tanvirtin/vgit.nvim'] = { -- gitsign has similar features
 }
 
 tools["tpope/vim-fugitive"] = {
-  cmd = {"Gvsplit", "Git", "Gedit", "Gstatus", "Gdiffsplit", "Gvdiffsplit",},
   opt = true
 }
 
 tools["junegunn/gv.vim"] = {
-  cmd = {"GV", "GV!", "GV! --patch", "G log --patch",},
   config = function ()
     require"packer".loader("vim-fugitive")
   end,
