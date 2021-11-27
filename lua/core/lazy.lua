@@ -1,12 +1,3 @@
-local function daylight()
-  local h = tonumber(os.date("%H"))
-  if h > 6 and h < 18 then
-    return 'light'
-  else
-    return 'dark'
-  end
-end
-
 local loader = require"packer".loader
 _G.PLoader = loader
 function Lazyload()
@@ -14,21 +5,9 @@ function Lazyload()
   --
   math.randomseed(os.time())
   local themes = {
-    "material_plus.nvim", "aurora", "aurora", "tokyonight.nvim", "material_plus.nvim", "aurora",
-    "gruvbox-material", "sonokai", "github-nvim-theme"
+    "gruvbox-material", "sonokai",
   }
 
-  if plugin_folder() == [[~/github/]] then
-    if daylight() == 'light' then
-      themes = {"gruvbox-material", "material_plus.nvim"}
-      -- themes = {"material_plus.nvim"}
-    end
-
-    -- themes = {"gruvbox-material"}
-    -- debug the color theme
-    -- themes = {"material_plus.nvim"}
-    -- themes = {"aurora"}
-  end
   local v = math.random(1, #themes)
   local loading_theme = themes[v]
 
@@ -127,8 +106,8 @@ function Lazyload()
   -- local cmd = [[au VimEnter * ++once lua require("packer.load")({']] .. loading_theme
   --                 .. [['}, { event = "VimEnter *" }, _G.packer_plugins)]]
   -- vim.cmd(cmd)
-  require("modules.ui.eviline")
-  require('wlfloatline').setup()
+  -- require("modules.ui.eviline")
+  -- require('wlfloatline').setup()
 
 end
 

@@ -10,15 +10,6 @@ function config.windline()
   -- require('wlfloatline').toggle()
 end
 
-local function daylight()
-  local h = tonumber(os.date("%H"))
-  if h > 6 and h < 18 then
-    return 'light'
-  else
-    return 'dark'
-  end
-end
-
 local winwidth = function()
   return vim.api.nvim_call_function("winwidth", {0})
 end
@@ -320,15 +311,7 @@ function config.gruvbox()
   local palettes = {"material", "mix", "original"}
   local v = opt[math.random(1, #opt)]
   local palette = palettes[math.random(1, #palettes)]
-  local h = tonumber(os.date("%H"))
-  if h > 6 and h < 18 then
-    lprint('gruvboxlight')
-    vim.cmd("set background=light")
-  else
-    lprint('gruvboxdark')
-    vim.cmd("set background=dark")
-  end
-
+  vim.cmd("set background=dark")
   vim.g.gruvbox_material_invert_selection = 0
   vim.g.gruvbox_material_enable_italic = 1
   -- vim.g.gruvbox_material_italicize_strings = 1

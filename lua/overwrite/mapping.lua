@@ -104,7 +104,7 @@ local keys = {
   ["i|<Leader>df"] = map_cu("Clap dumb_jump ++query=<cword> | startinsert"):with_noremap():with_silent(),
   -- ["n|<F2>"] = map_cr(""):with_expr(),
   ["n|<F5>"] = map_cmd("v:lua.run_or_test(v:true)"):with_expr(),
-  ["n|<F9>"] = map_cr("GoBreakToggle")
+  ["n|<F9>"] = map_cr("GoBreakToggle"),
   -- session
   -- ["n|<Leader>ss"] = map_cu('SessionSave'):with_noremap(),
   -- ["n|<Leader>sl"] = map_cu('SessionLoad'):with_noremap(),
@@ -150,6 +150,10 @@ local keys = {
   ["n|<Leader>grom"] = map_cr("Git rebase origin/master"),
 }
 
+-- good telescope project search
+vim.cmd([[
+  nnoremap <leader>ps :lua require('telescope.builtin').grep_string({ search = vim.fn.input("Grep For > ")})<CR>
+]])
 --
 vim.cmd([[vnoremap  <leader>y  "+y]])
 vim.cmd([[nnoremap  <leader>Y  "+yg_]])

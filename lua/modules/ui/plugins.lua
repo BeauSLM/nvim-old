@@ -79,8 +79,9 @@ ui["lukas-reineke/indent-blankline.nvim"] = {opt = true, config = conf.blankline
 
 ui["dstein64/nvim-scrollview"] = {disable = true, event = {'CursorMoved', 'CursorMovedI'}, config = conf.scrollview}
 
-ui[plugin_folder() .. "aurora"] = {opt = true, config = conf.aurora}
+ui[plugin_folder() .. "aurora"] = {disable = true, opt = true, config = conf.aurora}
 ui["folke/tokyonight.nvim"] = {
+  disable = true,
   opt = true,
   setup = conf.tokyonight,
   config = function()
@@ -91,6 +92,7 @@ ui["folke/tokyonight.nvim"] = {
 }
 
 ui["projekt0n/github-nvim-theme"] = {
+  disable = true,
   opt = true,
   config = function()
     -- vim.cmd [[hi CursorLine guibg=#353644]]
@@ -118,6 +120,7 @@ ui["sainnhe/gruvbox-material"] = {opt = true, config = conf.gruvbox}
 -- ui["rafamadriz/neon"] = {opt = true, config = conf.neon}
 
 ui[plugin_folder() .. "material_plus.nvim"] = {
+  disable = true,
   opt = true,
   setup = conf.material,
   config = function()
