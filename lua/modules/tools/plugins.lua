@@ -163,9 +163,6 @@ tools["tpope/vim-fugitive"] = {
 }
 
 tools["junegunn/gv.vim"] = {
-  config = function ()
-    require"packer".loader("vim-fugitive")
-  end,
   opt = true,
 }
 
