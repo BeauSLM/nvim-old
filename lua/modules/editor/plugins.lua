@@ -81,10 +81,11 @@ editor["mg979/vim-visual-multi"] = {
   setup = conf.vmulti
 }
 
-editor['indianboy42/hop-extensions'] = {after = 'hop', opt = true}
+editor['indianboy42/hop-extensions'] = {disable = true, after = 'hop', opt = true}
 
 -- EasyMotion in lua. -- maybe replace sneak
 editor["phaazon/hop.nvim"] = {
+  disable = true,
   as = "hop",
   cmd = {
     "HopWord", "HopWordAC", "HopWordBC", "HopLine", "HopChar1", "HopChar1AC", "HopChar1BC",
