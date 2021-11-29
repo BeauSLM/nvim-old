@@ -3,6 +3,7 @@ local conf = require("modules.lang.config")
 local path = plugin_folder()
 
 lang['nathom/filetype.nvim'] = {
+  disable = true,
   -- event = {'BufEnter'},
   setup = function()
     vim.g.did_load_filetypes = 1
