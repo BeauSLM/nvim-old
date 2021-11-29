@@ -35,7 +35,7 @@ function options:load_options()
       ignorecase = true, -- Search case insensitive...
       smartcase = true, -- ... but not it begins with upper case
       incsearch = true, -- Shows the match while typing
-      hlsearch = true, -- Highlight found searches
+      hlsearch = false, -- Highlight found searches
       grepformat = "%f:%l:%m,%m\\ %f\\ match%ts,%f", -- "%f:%l:%c:%m";
       shortmess = "aotTIcF",
       -- showcmd        = false;
