@@ -307,19 +307,17 @@ function config.indentguides()
 end
 
 function config.gruvbox()
-  local opt = {"soft", "medium", "hard"}
-  local palettes = {"material", "mix", "original"}
-  local v = opt[math.random(1, #opt)]
-  local palette = palettes[math.random(1, #palettes)]
+  local palette = "original"
   vim.cmd("set background=dark")
   vim.g.gruvbox_material_invert_selection = 0
   vim.g.gruvbox_material_enable_italic = 1
-  -- vim.g.gruvbox_material_italicize_strings = 1
+  vim.cmd([[if exists('+termguicolors')
+      let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+      let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+  endif]])
   -- vim.g.gruvbox_material_invert_signs = 1
   vim.g.gruvbox_material_improved_strings = 1
   vim.g.gruvbox_material_improved_warnings = 1
-  -- vim.g.gruvbox_material_contrast_dark=v
-  vim.g.gruvbox_material_background = v
   vim.g.gruvbox_material_enable_bold = 1
   vim.g.gruvbox_material_palette = palette
   vim.cmd("colorscheme gruvbox-material")
