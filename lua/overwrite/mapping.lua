@@ -89,7 +89,6 @@ local keys = {
   -- ["n|<d-f>"] = map_cu("Clap grep ++query=<cword> |  startinsert"),
   -- ["i|<d-f>"] = map_cu("Clap grep ++query=<cword> |  startinsert"):with_noremap():with_silent(),
   ["n|<Leader>df"] = map_cu("Clap dumb_jump ++query=<cword> | startinsert"),
-  ["i|<Leader>df"] = map_cu("Clap dumb_jump ++query=<cword> | startinsert"):with_noremap():with_silent(),
   -- ["n|<F2>"] = map_cr(""):with_expr(),
   ["n|<F5>"] = map_cmd("v:lua.run_or_test(v:true)"):with_expr(),
   ["n|<F9>"] = map_cr("GoBreakToggle"),
