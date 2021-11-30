@@ -71,11 +71,6 @@ local keys = {
   ["n|<Leader><Leader>j"] = map_cr("SplitjoinJoin"),
   ["n|<F13>"] = map_cr("NvimTreeToggle"),
 
-  ["xon|f"] = map_cmd("<cmd>lua  Line_ft('f')<cr>"),
-  ["xon|F"] = map_cmd("<cmd>lua  Line_ft('F')<cr>"),
-  ["xon|t"] = map_cmd("<cmd>lua  Line_ft('t')<cr>"),
-  ["xon|T"] = map_cmd("<cmd>lua  Line_ft('T')<cr>"),
-
   -- clap --
   ["n|<d-C>"] = map_cu("Clap | startinsert"),
   ["i|<d-C>"] = map_cu("Clap | startinsert"):with_noremap():with_silent(),
