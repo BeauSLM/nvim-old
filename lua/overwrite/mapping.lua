@@ -112,6 +112,7 @@ local keys = {
   ["n|<M-j>"] = map_cmd("<C-w>j"),
   ["n|<M-k>"] = map_cmd("<C-w>k"),
   ["n|<M-l>"] = map_cmd("<C-w>l"),
+  ["n|<Leader>m"] = map_cr("MaximizerToggle"),
 
   -- fugitive maps
   ["n|<Leader>gs"] = map_cr("Git"),
