@@ -56,7 +56,7 @@ local treesitter_obj = function()
       disable = {"elm"},
       lsp_interop = {
         enable = enable,
-        peek_definition_code = {["DF"] = "@function.outer", ["CF"] = "@class.outer"}
+        -- peek_definition_code = {["DF"] = "@function.outer", ["CF"] = "@class.outer"}
       },
       keymaps = {
         ["iL"] = {
