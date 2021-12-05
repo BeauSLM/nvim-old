@@ -116,6 +116,7 @@ editor["numToStr/Comment.nvim"] = {
 
 -- copy paste failed in block mode when clipboard = unnameplus"
 editor["bfredl/nvim-miniyank"] = {
+  disable = true,
   keys = {"p", "y", "<C-v>"},
   opt = true,
   setup = function()
