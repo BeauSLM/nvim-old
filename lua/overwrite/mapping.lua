@@ -128,7 +128,7 @@ local keys = {
   ["v|<Leader>gp"] = map_cr("GV! --patch"),
   ["v|<Leader>gL"] = map_cr("G log --patch"),
 
-  ["n|<Leader>ga"] = map_cr("Git fetch --all"),
+  ["n|<Leader>gga"] = map_cr("Git fetch --all"),
   ["n|<Leader>grum"] = map_cr("Git rebase upstream/master"),
   ["n|<Leader>grom"] = map_cr("Git rebase origin/master"),
 }
