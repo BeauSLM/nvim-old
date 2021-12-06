@@ -158,14 +158,6 @@ tools['tanvirtin/vgit.nvim'] = { -- gitsign has similar features
   config = conf.vgit
 }
 
-tools["tpope/vim-fugitive"] = {
-  opt = true
-}
-
-tools["junegunn/gv.vim"] = {
-  opt = true,
-}
-
 tools["rmagatti/auto-session"] = {config = conf.session}
 
 tools["rmagatti/session-lens"] = {

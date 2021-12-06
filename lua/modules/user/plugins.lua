@@ -1,5 +1,10 @@
 local user = {}
 
+user["junegunn/gv.vim"] = {
+  opt = true,
+  requires = {"tpope/vim-fugitive", opt = true,},
+}
+
 user["itchyny/lightline.vim"] = {
   event = "UIEnter",
   config = function ()
