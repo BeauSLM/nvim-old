@@ -42,6 +42,7 @@ ui["akinsho/bufferline.nvim"] = {
 -- }
 
 ui["kyazdani42/nvim-tree.lua"] = {
+  disable = true,
   cmd = {"NvimTreeToggle", "NvimTreeOpen"},
   -- requires = {'kyazdani42/nvim-web-devicons'},
   setup = conf.nvim_tree_setup,
