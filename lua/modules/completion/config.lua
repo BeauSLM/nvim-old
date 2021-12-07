@@ -130,7 +130,8 @@ function config.nvim_cmp()
     },
 
     -- You should specify your *installed* sources.
-    sources = sources
+    sources = sources,
+    experimental = { ghost_text = true, },
   }
 
   require'cmp'.setup.cmdline(':', {sources = {{name = 'cmdline'}}})
