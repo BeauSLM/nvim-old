@@ -53,7 +53,7 @@ function options:load_options()
       autowrite = true, -- Automatically save before :next, :make etc.
       autoread = true, -- Automatically read changed files
       breakindent = true, -- Make it so that long lines wrap smartly
-      smartindent = true, -- use intelligent indentation
+      cindent = true, -- use intelligent indentation
       showmatch = true, -- highlight matching braces
       numberwidth = 3,
       scrolloff = 12,
