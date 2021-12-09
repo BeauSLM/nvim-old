@@ -182,7 +182,7 @@ function config.navigator()
     -- default_mapping = false,
     -- keymaps = {{key = "gs", func = "references()"}},
     lsp = {
-      format_on_save = true, -- set to false to disasble lsp code format on save (if you are using prettier/efm/formater etc)
+      format_on_save = false, -- set to false to disasble lsp code format on save (if you are using prettier/efm/formater etc)
       disable_format_cap = {"sqls", "gopls"}, -- a list of lsp not enable auto-format (e.g. if you using efm or vim-codeformat etc)
       -- disable_lsp = {'denols'},
       disable_lsp = {"rls", "flow"},

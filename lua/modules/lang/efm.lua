@@ -46,12 +46,12 @@ local efm_cfg = {
     -- client.resolved_capabilities.code_action = nil
     local log = require("guihua.log").new({level = "info"}, true)
 
-    vim.cmd([[
-      aug efmFormat
-        au!
-        autocmd BufWritePre * lua vim.lsp.buf.formatting()
-      aug END
-     ]])
+    -- vim.cmd([[
+    --   aug efmFormat
+    --     au!
+    --     autocmd BufWritePre * lua vim.lsp.buf.formatting()
+    --   aug END
+    --  ]])
 
     -- print ("efm attached")
     -- set_lsp_config(client)
