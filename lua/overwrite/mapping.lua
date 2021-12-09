@@ -131,6 +131,9 @@ local keys = {
   ["n|<Leader>gga"] = map_cr("Git fetch --all"),
   ["n|<Leader>grum"] = map_cr("Git rebase upstream/master"),
   ["n|<Leader>grom"] = map_cr("Git rebase origin/master"),
+
+  -- lsp maps
+  ["n|<Leader>F"] = map_cr("lua vim.lsp.buf.formatting()"),
 }
 
 -- good telescope project search
