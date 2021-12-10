@@ -39,7 +39,7 @@ local function load_options()
         shada = "!,'300,<50,@100,s10,h",
         backupskip = "/tmp/*,$TMPDIR/*,$TMP/*,$TEMP/*,*/shm/*,/private/var/*,.vault.vim",
         smarttab = true,
-        smartindent = true,
+        cindent = true,
         shiftround = true,
         -- lazyredraw     = true;
         timeout = true,

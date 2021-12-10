@@ -53,7 +53,7 @@ function options:load_options()
       autowrite = true, -- Automatically save before :next, :make etc.
       autoread = true, -- Automatically read changed files
       breakindent = true, -- Make it so that long lines wrap smartly
-      cindent = true, -- use intelligent indentation
+      cindent = true,
       showmatch = true, -- highlight matching braces
       numberwidth = 3,
       scrolloff = 12,
@@ -85,6 +85,7 @@ function options:load_options()
   vim.cmd("imap <C-V> <C-R>*")
   vim.cmd('vmap <LeftRelease> "*ygv')
   vim.cmd("unlet loaded_matchparen")
+  vim.cmd("filetype plugin indent on")
   vim.g.python3_host_prog = "/usr/bin/python3"
   vim.g.python_host_prog = ""
 end
