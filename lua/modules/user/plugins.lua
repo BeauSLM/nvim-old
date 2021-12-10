@@ -1,5 +1,8 @@
 local user = {}
 
+-- possibly remove this later
+user["tpope/vim-eunuch"] = {}
+
 user["junegunn/gv.vim"] = {
   opt = true,
   requires = {"tpope/vim-fugitive", opt = true,},
