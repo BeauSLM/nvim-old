@@ -72,6 +72,7 @@ lang["nvim-treesitter/playground"] = {
 -- lang["ElPiloto/sidekick.nvim"] = {opt = true, fn = {'SideKickNoReload'}, setup = conf.sidekick}
 lang['stevearc/aerial.nvim'] = {
   opt = true,
+  -- TODO: find a better time to load this plugin
   cmd = {'AerialToggle'},
   setup = conf.aerial,
   config = function()

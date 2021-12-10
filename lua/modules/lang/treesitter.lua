@@ -112,8 +112,8 @@ local treesitter_obj = function()
             },
             swap = {
                 enable = enable,
-                swap_next = {["<leader>a"] = "@parameter.inner"},
-                swap_previous = {["<leader>A"] = "@parameter.inner"}
+                -- swap_next = {["<leader>a"] = "@parameter.inner"},
+                -- swap_previous = {["<leader>A"] = "@parameter.inner"}
             }
         },
         -- ensure_installed = "maintained"
