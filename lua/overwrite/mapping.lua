@@ -1,4 +1,5 @@
-local bind = require("keymap.bind") local map_cr = bind.map_cr
+local bind = require("keymap.bind")
+local map_cr = bind.map_cr
 local map_cu = bind.map_cu
 local map_cmd = bind.map_cmd
 local map_args = bind.map_args
@@ -40,10 +41,10 @@ local keys = {
   -- Lsp mapp work when insertenter and lsp start
   --
   -- ["n|<Leader>tc"] = map_cu("Clap colors"):with_noremap():with_silent(),
-  ["n|<Leader>bb"] = map_cu("Clap buffers"):with_noremap():with_silent(),
+  -- ["n|<Leader>bb"] = map_cu("Clap buffers"):with_noremap():with_silent(),
   -- ["n|<Leader>ff"] = map_cu("Clap grep"):with_noremap():with_silent(),
   ["n|<Leader>fb"] = map_cu("Clap marks"):with_noremap():with_silent(),
-  ["n|<C-f>"] = map_cu("Clap filer"):with_noremap():with_silent(),
+  -- ["n|<C-x><C-f>"] = map_cu("Clap filer"):with_noremap():with_silent(),
   ["n|<Leader>ff"] = map_cu("Clap files ++finder=rg --ignore --hidden --files"):with_noremap():with_silent(),
   ["n|<M-g>"] = map_cu("Clap gfiles"):with_noremap():with_silent(),
   ["n|<Leader>fw"] = map_cu("Clap grep2 ++query=<cword>"):with_noremap():with_silent(),
@@ -84,6 +85,7 @@ local keys = {
   -- ["n|<d-f>"] = map_cu("Clap grep ++query=<cword> |  startinsert"),
   -- ["i|<d-f>"] = map_cu("Clap grep ++query=<cword> |  startinsert"):with_noremap():with_silent(),
   ["n|<Leader>df"] = map_cu("Clap dumb_jump ++query=<cword> | startinsert"),
+  ["i|<Leader>df"] = map_cu("Clap dumb_jump ++query=<cword> | startinsert"):with_noremap():with_silent(),
   -- ["n|<F2>"] = map_cr(""):with_expr(),
   ["n|<F5>"] = map_cmd("v:lua.run_or_test(v:true)"):with_expr(),
   ["n|<F9>"] = map_cr("GoBreakToggle"),
@@ -195,6 +197,7 @@ _G.run_or_test = function(debug)
 end
 
 vim.cmd([[command! -nargs=*  DebugOpen lua require"modules.lang.dap".prepare()]])
+vim.cmd([[command! -nargs=*  HpoonClear lua require"harpoon.mark".clear_all()]])
 -- Use `git ls-files` for git files, use `find ./ *` for all files under work directory.
--- some changes
+--
 return K

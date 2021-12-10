@@ -146,11 +146,19 @@ tools["lewis6991/gitsigns.nvim"] = {
   opt = true
 }
 
+local path = plugin_folder()
+tools[path .. "sad.nvim"] = {
+  cmd = {'Sad'},
+  opt = true,
+  config = function()
+    require'sad'.setup({debug = true, log_path = "~/tmp/sad.log"})
+  end
+}
+
 -- early stage...
 tools['tanvirtin/vgit.nvim'] = { -- gitsign has similar features
   setup = function()
     vim.o.updatetime = 2000
-    vim.wo.signcolumn = 'yes'
   end,
   cmd = {'VGit'},
   -- after = {"telescope.nvim"},
@@ -198,16 +206,7 @@ tools["ahmedkhalf/project.nvim"] = {
   opt = true,
   after = {"telescope.nvim"},
   keys = {'<M>', '<Leader>'},
-  config = function()
-    require("project_nvim").setup {
-      datapath = vim.fn.stdpath("data")
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-    require 'utils.telescope'
-    require('telescope').load_extension('projects')
-  end
+  config = conf.project
 }
 
 tools["jvgrootveld/telescope-zoxide"] = {

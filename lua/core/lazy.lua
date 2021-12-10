@@ -128,6 +128,8 @@ end, lazy_timer)
 --   -- vim.cmd(cmd)
 -- end, lazy_timer + 20)
 
+vim.cmd([[hi LineNr guifg=#505068]])
+
 vim.defer_fn(function()
   local loader = require'packer'.loader
   loader('telescope.nvim telescope-zoxide project.nvim nvim-neoclip.lua')

@@ -59,54 +59,10 @@ ui["kyazdani42/nvim-tree.lua"] = {
 
 ui["lukas-reineke/indent-blankline.nvim"] = {opt = true, config = conf.blankline} -- after="nvim-treesitter",
 
-ui["dstein64/nvim-scrollview"] = {disable = true, event = {'CursorMoved', 'CursorMovedI'}, config = conf.scrollview}
-
-ui[plugin_folder() .. "aurora"] = {disable = true, opt = true, config = conf.aurora}
-ui["folke/tokyonight.nvim"] = {
-  disable = true,
-  opt = true,
-  setup = conf.tokyonight,
-  config = function()
-    -- vim.cmd [[hi CursorLine guibg=#353644]]
-    vim.cmd [[colorscheme tokyonight]]
-    vim.cmd [[hi TSCurrentScope guibg=#282338]]
-  end
-}
-
-ui["projekt0n/github-nvim-theme"] = {
-  disable = true,
-  opt = true,
-  config = function()
-    -- vim.cmd [[hi CursorLine guibg=#353644]]
-    local styles = {'dark', 'dark_default', 'dimmed'}
-    local v = math.random(1, #styles)
-    local st = styles[v]
-    require('github-theme').setup({
-      function_style = "bold",
-      theme_style = st,
-      sidebars = {"qf", "vista_kind", "terminal", "packer"},
-      colors = {bg_statusline = '#332344'}
-    })
-    -- vim.cmd([[highlight StatusLine guibg='#A3B3C4']])
-    vim.cmd([[doautocmd ColorScheme]])
-
-  end
-}
-
--- ui["ChristianChiarulli/nvcode-color-schemes.vim"] = {opt = true, config = conf.nvcode}
-
 ui["sainnhe/sonokai"] = {opt = true, config = conf.sonokai}
 ui["sainnhe/gruvbox-material"] = {opt = true, config = conf.gruvbox}
 
 -- cant config cursor line
 -- ui["rafamadriz/neon"] = {opt = true, config = conf.neon}
 
-ui[plugin_folder() .. "material_plus.nvim"] = {
-  disable = true,
-  opt = true,
-  setup = conf.material,
-  config = function()
-    require("material").set()
-  end
-}
 return ui
