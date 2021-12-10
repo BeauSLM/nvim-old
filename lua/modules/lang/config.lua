@@ -21,7 +21,6 @@ function config.refactor()
   local refactor = require("refactoring")
   refactor.setup({})
 
-  print('refactor')
   _G.ts_refactors = function()
     -- telescope refactoring helper
     local function _refactor(prompt_bufnr)
