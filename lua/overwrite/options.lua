@@ -85,7 +85,7 @@ function options:load_options()
   vim.cmd("imap <C-V> <C-R>*")
   vim.cmd('vmap <LeftRelease> "*ygv')
   vim.cmd("unlet loaded_matchparen")
-  vim.g.python3_host_prog = "/usr/local/bin/python3"
+  vim.g.python3_host_prog = "/usr/bin/python3"
   vim.g.python_host_prog = ""
 end
 
