@@ -1,4 +1,5 @@
 local user = {}
+local conf = require("modules.user.config")
 
 -- possibly remove this later
 user["tpope/vim-eunuch"] = {}
@@ -29,25 +30,11 @@ user["abecodes/tabout.nvim"] = {
   end,
 }
 
--- TODO: replace with lualine!
-user["itchyny/lightline.vim"] = {
+user["nvim-lualine/lualine.nvim"] = {
+  opt = true,
+  after = "nvim-web-devicons",
   event = "UIEnter",
-  config = function ()
-    vim.cmd([[
-    let g:lightline = {
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component_function': {
-      \   'gitbranch': 'FugitiveHead'
-      \ },
-      \ }
-
-    ]])
-  end,
-  opt = true
+  config = conf.lualine,
 }
 
--- your plugin config
 return user
