@@ -18,6 +18,18 @@ user["shumphrey/fugitive-gitlab.vim"] = {
   after = "vim-fugitive"
 }
 
+-- TODO: settings!
+user["abecodes/tabout.nvim"] = {
+  opt = true,
+  after = {"nvim-treesitter"},
+  config = function ()
+    require("tabout").setup {
+      completion = false,
+    }
+  end,
+}
+
+-- TODO: replace with lualine!
 user["itchyny/lightline.vim"] = {
   event = "UIEnter",
   config = function ()
