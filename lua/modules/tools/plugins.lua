@@ -124,7 +124,7 @@ tools["voldikss/vim-floaterm"] = {
 tools["nanotee/zoxide.vim"] = {cmd = {"Z", "Lz", "Zi"}}
 
 tools["liuchengxu/vim-clap"] = {
-  cmd = {"Clap"},
+  cmd = {"Clap", "Vista"},
   run = function()
     vim.fn["clap#installer#build_maple"]()
     vim.fn["clap#installer#build_python_dynamic_module"]()

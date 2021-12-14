@@ -55,6 +55,8 @@ local keys = {
   ["n|<Leader>fu"] = map_cu("Clap git_diff_files"):with_noremap():with_silent(),
   ["n|<Leader>fv"] = map_cu("Clap grep2 ++query=@visual"):with_noremap():with_silent(),
   ["n|<Leader>fh"] = map_cu("Clap command_history"):with_noremap():with_silent(),
+  ["n|<Leader>sp"] = map_cu("Clap proj_tags"):with_noremap():with_silent(),
+  ["n|<Leader>ss"] = map_cu("Vista finder clap"):with_noremap():with_silent(), -- :Clap tags
   ["n|<Leader><Leader>r"] = map_cmd("v:lua.run_or_test()"):with_expr(),
   ["v|<Leader><Leader>r"] = map_cmd("v:lua.run_or_test()"):with_expr(),
 
@@ -73,6 +75,7 @@ local keys = {
   ["n|<F13>"] = map_cr("NvimTreeToggle"),
 
   -- clap --
+  -- TODO: MORE OF THIS HOLY FUCK
   ["n|<d-C>"] = map_cu("Clap | startinsert"),
   ["i|<d-C>"] = map_cu("Clap | startinsert"):with_noremap():with_silent(),
   -- ["n|<d-p>"] = map_cu("Clap files | startinsert"),
@@ -115,6 +118,9 @@ local keys = {
   ["n|<M-k>"] = map_cmd("<C-w>k"),
   ["n|<M-l>"] = map_cmd("<C-w>l"),
   ["n|<Leader>m"] = map_cr("MaximizerToggle"),
+
+  -- symbols navigation
+  ["n|<Leader>so"] = map_cr("SymbolsOutline"),
 
   -- fugitive maps
   ["n|<Leader>gs"] = map_cr("Git"),
