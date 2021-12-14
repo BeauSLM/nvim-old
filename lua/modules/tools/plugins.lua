@@ -126,7 +126,8 @@ tools["nanotee/zoxide.vim"] = {cmd = {"Z", "Lz", "Zi"}}
 tools["liuchengxu/vim-clap"] = {
   cmd = {"Clap"},
   run = function()
-    vim.fn["clap#installer#download_binary"]()
+    vim.fn["clap#installer#build_maple"]()
+    vim.fn["clap#installer#build_python_dynamic_module"]()
   end,
   setup = conf.clap,
   config = conf.clap_after
