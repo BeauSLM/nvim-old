@@ -9,7 +9,6 @@ end
 ui["kyazdani42/nvim-web-devicons"] = {}
 
 ui["windwp/windline.nvim"] = {
-  disable = true,
   event = "UIEnter",
   config = conf.windline,
   -- requires = {'kyazdani42/nvim-web-devicons'},

@@ -106,7 +106,7 @@ function Lazyload()
   -- local cmd = [[au VimEnter * ++once lua require("packer.load")({']] .. loading_theme
   --                 .. [['}, { event = "VimEnter *" }, _G.packer_plugins)]]
   -- vim.cmd(cmd)
-  -- require("modules.ui.eviline")
+  require("modules.ui.eviline")
   -- require('wlfloatline').setup()
 
 end

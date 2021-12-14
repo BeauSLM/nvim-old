@@ -31,6 +31,7 @@ user["abecodes/tabout.nvim"] = {
 }
 
 user["nvim-lualine/lualine.nvim"] = {
+  disable = true,
   opt = true,
   after = "nvim-web-devicons",
   event = "UIEnter",
