@@ -168,7 +168,7 @@ function config.vgit()
       ['n <leader>ba'] = 'buffer_gutter_blame_preview', -- show all blames
       ['n <leader>bp'] = 'buffer_blame_preview', -- buffer diff
       ['n <leader>bh'] = 'buffer_history_preview', -- buffer commit history DiffviewFileHistory
-      ['n <leader>gp'] = 'buffer_staged_diff_preview', -- diff for staged changes
+      -- ['n <leader>gp'] = 'buffer_staged_diff_preview', -- diff for staged changes
       ['n <leader>pd'] = 'project_diff_preview' -- diffview is slow
     },
     controller = {
