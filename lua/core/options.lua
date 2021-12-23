@@ -99,7 +99,7 @@ local function load_options()
         formatoptions = "1jql",
         textwidth = 80,
         expandtab = true,
-        autoindent = true,
+        -- autoindent = true,
         tabstop = 4,
         shiftwidth = 4,
         softtabstop = -1,
