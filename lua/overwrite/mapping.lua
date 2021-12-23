@@ -134,6 +134,12 @@ local keys = {
 
   -- lsp maps
   ["n|<Leader>F"] = map_cr("lua vim.lsp.buf.formatting()"),
+
+  -- neogen maps
+  -- TODO: jump_next map! make same key as luasnip jump next
+  ["n|<Leader>nf"] = map_cr(":lua require'neogen'.generate()"):with_noremap():with_silent(),
+  ["n|<Leader>nt"] = map_cr(":lua require'neogen'.generate( { type = 'type' } )"):with_noremap():with_silent(),
+  ["n|<Leader>nc"] = map_cr(":lua require'neogen'.generate( { type = 'class' } )"):with_noremap():with_silent(),
 }
 
 -- good telescope project search
