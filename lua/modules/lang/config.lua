@@ -257,7 +257,7 @@ function config.navigator()
     -- external = true, -- true: enable for goneovim multigrid otherwise false
     lsp_signature_help = true,
     -- default_mapping = false,
-    -- keymaps = {{key = "gs", func = "references()"}},
+    keymaps = {{key = "<Leader>Gr", func = "require('navigator.reference').async_ref()"}},
     lsp = {
       format_on_save = false, -- set to false to disasble lsp code format on save (if you are using prettier/efm/formater etc)
       disable_format_cap = { "sqls", "gopls" }, -- a list of lsp not enable auto-format (e.g. if you using efm or vim-codeformat etc)
