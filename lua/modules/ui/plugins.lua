@@ -3,16 +3,16 @@ local conf = require("modules.ui.config")
 
 --
 local winwidth = function()
-  return vim.api.nvim_call_function("winwidth", {0})
+  return vim.api.nvim_call_function("winwidth", { 0 })
 end
 
 ui["kyazdani42/nvim-web-devicons"] = {}
 
 ui["windwp/windline.nvim"] = {
-  event = "UIEnter",
+  -- event = "UIEntwindlineer",
   config = conf.windline,
   -- requires = {'kyazdani42/nvim-web-devicons'},
-  opt = true
+  opt = true,
 }
 
 ui["lambdalisue/glyph-palette.vim"] = {}
@@ -24,7 +24,7 @@ ui["akinsho/bufferline.nvim"] = {
   diagnostics_update_in_insert = false,
   -- after = {"aurora"}
   -- requires = {'kyazdani42/nvim-web-devicons'}
-  opt = true
+  opt = true,
 }
 -- 'luaromgrk/barbar.nvim'
 -- ui['romgrk/barbar.nvim'] = {
@@ -45,16 +45,10 @@ ui["kyazdani42/nvim-tree.lua"] = {
   cmd = {"NvimTreeToggle", "NvimTreeOpen"},
   -- requires = {'kyazdani42/nvim-web-devicons'},
   setup = conf.nvim_tree_setup,
-  config = conf.nvim_tree
+  config = conf.nvim_tree,
 }
 
--- ui['ms-jpq/chadtree'] = {
---   run = 'python3 -m chadtree deps',
---   branch = 'chad',
---   setup = function()
---     vim.g.chadtree_settings = {['theme.text_colour_set'] = 'nerdtree_syntax_dark'}
---   end
--- }
+ui["lukas-reineke/indent-blankline.nvim"] = { opt = true, config = conf.blankline } -- after="nvim-treesitter",
 
 ui["lukas-reineke/indent-blankline.nvim"] = {opt = true, config = conf.blankline} -- after="nvim-treesitter",
 

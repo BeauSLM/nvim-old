@@ -152,7 +152,15 @@ tools[path .. "sad.nvim"] = {
   cmd = {'Sad'},
   opt = true,
   config = function()
-    require'sad'.setup({debug = true, log_path = "~/tmp/sad.log"})
+    require'sad'.setup({debug = true, log_path = "~/tmp/neovim_debug.log"})
+  end
+}
+
+tools[path .. "viewdoc.nvim"] = {
+  cmd = {'Viewdoc'},
+  opt = true,
+  config = function()
+    require'viewdoc'.setup({debug = true, log_path = "~/tmp/neovim_debug.log"})
   end
 }
 
