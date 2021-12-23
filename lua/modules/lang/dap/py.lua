@@ -28,6 +28,6 @@ dap.configurations.python = {
 
 dap.adapters.python = {
   type = 'executable';
-  command = '/usr/local/opt/python@3.9/bin/python3';
+  command = 'python3';
   args = { '-m', 'debugpy.adapter' };
 }
