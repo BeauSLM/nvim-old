@@ -47,8 +47,6 @@ local keys = {
   ["n|<Leader>fu"] = map_cu("Clap git_diff_files"):with_noremap():with_silent(),
   ["n|<Leader>fv"] = map_cu("Clap grep2 ++query=@visual"):with_noremap():with_silent(),
   ["n|<Leader>fh"] = map_cu("Clap command_history"):with_noremap():with_silent(),
-  ["n|<Leader>sp"] = map_cu("Clap proj_tags"):with_noremap():with_silent(),
-  ["n|<Leader>ss"] = map_cu("Vista finder clap"):with_noremap():with_silent(), -- :Clap tags
   ["n|<Leader><Leader>r"] = map_cmd("v:lua.run_or_test()"):with_expr(),
   ["v|<Leader><Leader>r"] = map_cmd("v:lua.run_or_test()"):with_expr(),
 
@@ -113,6 +111,8 @@ local keys = {
 
   -- symbols navigation
   ["n|<Leader>so"] = map_cr("SymbolsOutline"),
+  ["n|<Leader>sp"] = map_cu("Clap proj_tags"):with_noremap():with_silent(),
+  ["n|<Leader>ss"] = map_cu("Vista finder clap"):with_noremap():with_silent(), -- :Clap tags
 
   -- fugitive maps
   ["n|<Leader>gs"] = map_cr("Git"),
