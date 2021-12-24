@@ -1,4 +1,3 @@
-require('dbg')
 local dap = require('dap')
 dap.configurations.python = {
   {
