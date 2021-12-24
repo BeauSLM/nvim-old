@@ -1,3 +1,10 @@
+# A note from me:
+This is a fork of https://github.com/ray-x/nvim, please check their setup. I have pretty extensively adjusted
+this to my preference. I maintain this strictly for my own use, and cannot guarantee that it'll work on any platform
+or work at all. If you're interested in using a similar setup, I suggest checking out the original, its fantastic.  
+
+The upstream's readme is below.
+
 # vim as a programming IDE
 
 ## 🏎 🏎 🏎 Need for speed! 🏎 🏎 🏎
