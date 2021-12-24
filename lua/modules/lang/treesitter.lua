@@ -119,7 +119,8 @@ local treesitter_obj = function()
         -- ensure_installed = "maintained"
         ensure_installed = {
             "go", "css", "html", "javascript", "typescript", "jsdoc", "json", "c", "java", "toml",
-            "tsx", "lua", "cpp", "python", "rust", "jsonc", "dart", "css", "yaml", "vue", "comment"
+            "tsx", "lua", "cpp", "python", "rust", "jsonc", "dart", "css", "yaml", "vue", "comment",
+            "bash", "cmake", "fish", "llvm", "php", "make", "regex", "vim", "zig",
         }
     }
 
