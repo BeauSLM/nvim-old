@@ -50,8 +50,6 @@ ui["kyazdani42/nvim-tree.lua"] = {
 
 ui["lukas-reineke/indent-blankline.nvim"] = { opt = true, config = conf.blankline } -- after="nvim-treesitter",
 
-ui["lukas-reineke/indent-blankline.nvim"] = {opt = true, config = conf.blankline} -- after="nvim-treesitter",
-
 ui["sainnhe/sonokai"] = {opt = true, config = conf.sonokai}
 ui["sainnhe/gruvbox-material"] = {opt = true, config = conf.gruvbox}
 
