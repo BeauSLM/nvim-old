@@ -1,4 +1,3 @@
--- require('telescope').load_extension('dap')
 local M = {}
 local bind = require("keymap.bind")
 local map_cr = bind.map_cr
@@ -28,13 +27,6 @@ local function keybind()
     ["n|<leader>drl"] = map_cr('<cmd>lua require"dap".repl.run_last()'):with_noremap():with_silent(),
     -- ["n|[t"] = map_cr("lua require'nvim-treesitter-refactor.navigation'.goto_previous_usage(0)"):with_noremap():with_silent(),
     -- ["n|]t"] = map_cr("lua require'nvim-treesitter-refactor.navigation'.goto_next_usage(0)"):with_noremap():with_silent(),
-    ["n|<leader>dcc"] = map_cr('<cmd>lua require"telescope".extensions.dap.commands{}'):with_noremap():with_silent(),
-    ["n|<leader>dco"] = map_cr('<cmd>lua require"telescope".extensions.dap.configurations{}'):with_noremap()
-        :with_silent(),
-    ["n|<leader>dlb"] = map_cr('<cmd>lua require"telescope".extensions.dap.list_breakpoints{}'):with_noremap()
-        :with_silent(),
-    ["n|<leader>dv"] = map_cr('<cmd>lua require"telescope".extensions.dap.variables{}'):with_noremap():with_silent(),
-    ["n|<leader>df"] = map_cr('<cmd>lua require"telescope".extensions.dap.frames{}'):with_noremap():with_silent()
     --
   }
 

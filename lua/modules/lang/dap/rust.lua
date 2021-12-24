@@ -20,5 +20,3 @@ dap.configurations.rust = {
     }
 }
 
-
-require('telescope').load_extension('dap')
