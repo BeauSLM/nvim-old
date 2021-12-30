@@ -114,6 +114,24 @@ local keys = {
   ["n|<Leader>sp"] = map_cu("Clap proj_tags"):with_noremap():with_silent(),
   ["n|<Leader>ss"] = map_cu("Vista finder clap"):with_noremap():with_silent(), -- :Clap tags
 
+  -- harpoon navigation
+  ["n|<Leader>a"] = map_cr("lua require'harpoon.mark'.toggle_file()"),
+  ["n|<Leader>ht"] = map_cr("lua require'harpoon.ui'.toggle_quick_menu()"),
+  ["n|<Leader>y"] = map_cr("lua require'harpoon.cmd-ui'.toggle_quick_menu()"),
+
+  ["n|<Leader>hj"] = map_cr("lua require'harpoon.ui'.nav_file(1)"),
+  ["n|<Leader>hk"] = map_cr("lua require'harpoon.ui'.nav_file(2)"),
+  ["n|<Leader>hl"] = map_cr("lua require'harpoon.ui'.nav_file(3)"),
+  ["n|<Leader>h;"] = map_cr("lua require'harpoon.ui'.nav_file(4)"),
+
+  ["n|<Leader>tj"] = map_cr("lua require'harpoon.term'.gotoTerminal(1)"),
+  ["t|<Leader>tj"] = map_cr("lua require'harpoon.term'.gotoTerminal(2)"),
+  ["n|<Leader>tk"] = map_cr("lua require'harpoon.term'.gotoTerminal(1)"),
+  ["t|<Leader>tk"] = map_cr("lua require'harpoon.term'.gotoTerminal(2)"),
+
+  ["n|<Leader>cj"] = map_cr("lua require'harpoon.term'.sendCommand(1, 1)"),
+  ["n|<Leader>ck"] = map_cr("lua require'harpoon.term'.sendCommand(1, 2)"),
+
   -- fugitive maps
   ["n|<Leader>gs"] = map_cr("Git"),
   ["n|<Leader>gd"] = map_cr("Git diff"),
