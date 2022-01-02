@@ -38,4 +38,9 @@ user["nvim-lualine/lualine.nvim"] = {
   config = conf.lualine,
 }
 
+user["svban/YankAssassin.vim"] = {
+  opt = true,
+  event = "VimEnter"
+}
+
 return user
