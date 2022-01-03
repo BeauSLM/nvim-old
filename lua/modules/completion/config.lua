@@ -41,6 +41,9 @@ function config.nvim_cmp()
     table.insert(sources, {name = 'buffer', keyword_length = 3})
     table.insert(sources, {name = 'calc'})
   end
+  if vim.o.ft == 'toml' then
+    table.insert(sources, {name = 'crates'})
+  end
   cmp.setup {
     snippet = {
       expand = function(args)
