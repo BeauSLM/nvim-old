@@ -112,7 +112,7 @@ local keys = {
   -- symbols navigation
   ["n|<Leader>so"] = map_cr("SymbolsOutline"),
   ["n|<Leader>sp"] = map_cu("Clap proj_tags"):with_noremap():with_silent(),
-  ["n|<Leader>ss"] = map_cu("Vista finder clap"):with_noremap():with_silent(), -- :Clap tags
+  ["n|<Leader>ss"] = map_cu("ClapTags"):with_noremap():with_silent(),
 
   -- harpoon navigation
   ["n|<Leader>a"] = map_cr("lua require'harpoon.mark'.toggle_file()"),
@@ -220,6 +220,7 @@ end
 
 vim.cmd([[command! -nargs=*  DebugOpen lua require"modules.lang.dap".prepare()]])
 vim.cmd([[command! -nargs=*  HpoonClear lua require"harpoon.mark".clear_all()]])
+vim.cmd([[command! -nargs=*  ClapTags lua if not packer_plugins["vista.vim"].loaded then require"packer".loader("vista.vim") end vim.cmd("Clap tags")]])
 -- Use `git ls-files` for git files, use `find ./ *` for all files under work directory.
 --
 return K
