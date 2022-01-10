@@ -393,8 +393,7 @@ M.setup = function()
   telescope.load_extension("gosource")
 
   loader('telescope-fzy-native.nvim telescope-fzf-native.nvim telescope-live-grep-raw.nvim')
-  loader('sqlite.lua')
-  loader('telescope-frecency.nvim project.nvim telescope-zoxide nvim-neoclip.lua')
+  loader('project.nvim telescope-zoxide')
 
   telescope.setup {
     extensions = {

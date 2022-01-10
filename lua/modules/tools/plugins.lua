@@ -229,6 +229,7 @@ tools["jvgrootveld/telescope-zoxide"] = {
 }
 
 tools["AckslD/nvim-neoclip.lua"] = {
+  disable = true,
   opt = true,
   keys = {'<M>', '<Leader>'},
   after = {"telescope.nvim"},
@@ -240,6 +241,7 @@ tools["AckslD/nvim-neoclip.lua"] = {
 }
 
 tools['nvim-telescope/telescope-frecency.nvim'] = {
+  disable = true,
   keys = {'<M>', '<Leader>'},
   after = {"telescope.nvim"},
   requires = {'tami5/sqlite.lua', module = 'sqlite', opt = true},
