@@ -10,7 +10,11 @@ lang['nathom/filetype.nvim'] = {
   end
 }
 
-lang["nvim-treesitter/nvim-treesitter"] = {opt = true, config = conf.nvim_treesitter}
+lang["nvim-treesitter/nvim-treesitter"] = {
+  opt = true,
+  config = conf.nvim_treesitter,
+  run = function() vim.cmd("TSUpdate") end,
+}
 
 lang["nvim-treesitter/nvim-treesitter-textobjects"] = {
   after = "nvim-treesitter",
