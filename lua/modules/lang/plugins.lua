@@ -17,6 +17,7 @@ lang["nvim-treesitter/nvim-treesitter"] = {
 }
 
 lang["nvim-treesitter/nvim-treesitter-textobjects"] = {
+  disable = true,
   after = "nvim-treesitter",
   config = conf.treesitter_obj,
   opt = true
@@ -37,6 +38,7 @@ lang['ThePrimeagen/refactoring.nvim'] = {
 }
 
 lang["nvim-treesitter/nvim-treesitter-refactor"] = {
+  disable = true,
   after = "nvim-treesitter-textobjects", -- manual loading
   config = conf.treesitter_ref, -- let the last loaded config treesitter
   opt = true
