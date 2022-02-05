@@ -125,9 +125,9 @@ local keys = {
   ["n|<Leader>h;"] = map_cr("lua require'harpoon.ui'.nav_file(4)"),
 
   ["n|<Leader>tj"] = map_cr("lua require'harpoon.term'.gotoTerminal(1)"),
-  ["t|<Leader>tj"] = map_cr("lua require'harpoon.term'.gotoTerminal(2)"),
-  ["n|<Leader>tk"] = map_cr("lua require'harpoon.term'.gotoTerminal(1)"),
-  ["t|<Leader>tk"] = map_cr("lua require'harpoon.term'.gotoTerminal(2)"),
+  ["t|<Leader>tj"] = map_cmd("<C-\\><C-n>:lua require'harpoon.term'.gotoTerminal(1)<CR>"),
+  ["n|<Leader>tk"] = map_cr("lua require'harpoon.term'.gotoTerminal(2)"),
+  ["t|<Leader>tk"] = map_cmd("<C-\\><C-n>:lua require'harpoon.term'.gotoTerminal(2)<CR>"),
 
   ["n|<Leader>cj"] = map_cr("lua require'harpoon.term'.sendCommand(1, 1)"),
   ["n|<Leader>ck"] = map_cr("lua require'harpoon.term'.sendCommand(1, 2)"),
