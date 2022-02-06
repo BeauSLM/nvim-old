@@ -15,9 +15,9 @@ local plug_map = {
   -- person keymap
   -- ["n|mf"]             = map_cr("<cmd>lua require('internal.fsevent').file_event()<CR>"):with_silent():with_nowait():with_noremap();
   -- Lsp mapp work when insertenter and lsp start
-  ["n|<leader>li"] = map_cr("LspInfo"):with_noremap():with_silent():with_nowait(),
-  ["n|<leader>ll"] = map_cr("LspLog"):with_noremap():with_silent():with_nowait(),
-  ["n|<leader>lr"] = map_cr("LspRestart"):with_noremap():with_silent():with_nowait(),
+  ["n|<leader>LI"] = map_cr("LspInfo"):with_noremap():with_silent():with_nowait(),
+  ["n|<leader>LL"] = map_cr("LspLog"):with_noremap():with_silent():with_nowait(),
+  ["n|<leader>LR"] = map_cr("LspRestart"):with_noremap():with_silent():with_nowait(),
   -- ["n|gt"]             = map_cmd("<cmd>lua vim.lsp.buf.type_definition()<CR>"):with_noremap():with_silent(),
   -- ["n|<Leader>cw"]     = map_cmd("<cmd>lua vim.lsp.buf.workspace_symbol()<CR>"):with_noremap():with_silent(),
   -- ["n|<Leader>ct"] = map_args("Template"),
@@ -36,8 +36,6 @@ local plug_map = {
   ["i|<C-r>"] = map_cmd('<cmd>Telescope registers<cr>'):with_noremap():with_silent(),
   ["n|<Leader>fr"] = map_cmd('<cmd>Telescope registers<cr>'):with_noremap():with_silent(),
   ["n|<Leader>fj"] = map_cmd('<cmd>lua require"utils.telescope".jump()<CR>'):with_noremap():with_silent(),
-  ["n|<M-p>"] = map_cr(
-      '<cmd>lua require("telescope").extensions.frecency.frecency({ sorter = require("telescope").extensions.fzf.native_fzf_sorter() })'):with_silent(),
   ["n|<Leader>cl"] = map_cr('<cmd>lua require("telescope").extensions.neoclip.default()'):with_silent(),
   ["n|<Leader>fz"] = map_cr('<cmd>lua require("telescope").extensions.zoxide.list()'):with_silent(),
   ["n|<Leader>fp"] = map_cr('<cmd>lua require("telescope").extensions.projects.projects()'):with_silent(),
