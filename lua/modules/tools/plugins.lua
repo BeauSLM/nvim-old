@@ -125,6 +125,7 @@ tools["nanotee/zoxide.vim"] = {cmd = {"Z", "Lz", "Zi"}}
 
 tools["liuchengxu/vim-clap"] = {
   cmd = "Clap",
+  requires = { "junegunn/fzf", opt = true, },
   run = function()
     vim.fn["clap#installer#build_maple"]()
     vim.fn["clap#installer#build_python_dynamic_module"]()
