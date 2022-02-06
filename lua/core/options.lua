@@ -97,7 +97,6 @@ local function load_options()
     local bw_local = {
         synmaxcol = 1000,
         formatoptions = "1jql",
-        textwidth = 80,
         expandtab = true,
         -- autoindent = true,
         tabstop = 4,

@@ -28,7 +28,6 @@ function options:load_options()
       hidden = true, -- Buffer should still exist if window is closed
       fileencoding = "utf-8", -- fenc
       mouse = "a",
-      textwidth = 120, -- wrap lines at 120 chars. 80 is somewaht antiquated with nowadays displays.
       expandtab = true, -- " expand tabs to spaces
       updatetime = 1000, -- Vim waits after you stop typing before it triggers the plugin is governed by the setting updatetime
       ignorecase = true, -- Search case insensitive...
@@ -67,8 +66,7 @@ function options:load_options()
   end
   local bw_local = {
     synmaxcol = 500,
-    textwidth = 120,
-    colorcolumn = "110", -- will reformat lines more than 120, but show ruler at 110
+    colorcolumn = "80", -- will reformat lines more than 120, but show ruler at 110
     wrap = true
   }
   bind_option(bw_local)
