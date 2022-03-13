@@ -2,15 +2,15 @@ local loader = require"packer".loader
 _G.PLoader = loader
 function Lazyload()
   --
-  math.randomseed(os.time())
-  local themes = {
-    "gruvbox-material", "sonokai",
-  }
+  -- math.randomseed(os.time())
+  -- local themes = {
+  --   "gruvbox-material", "sonokai",
+  -- }
+  --
+  -- local v = math.random(1, #themes)
+  -- local loading_theme = themes[v]
 
-  local v = math.random(1, #themes)
-  local loading_theme = themes[v]
-
-  loader(loading_theme)
+  loader("sonokai")
   --
   if vim.wo.diff then
     -- loader(plugins)
