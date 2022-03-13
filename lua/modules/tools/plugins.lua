@@ -176,9 +176,13 @@ tools['tanvirtin/vgit.nvim'] = { -- gitsign has similar features
   config = conf.vgit
 }
 
-tools["rmagatti/auto-session"] = {config = conf.session}
+tools["rmagatti/auto-session"] = {
+  disable = true,
+  config = conf.session
+}
 
 tools["rmagatti/session-lens"] = {
+  disable = true,
   cmd = "SearchSession",
   after = {'telescope.nvim'},
   config = function()
