@@ -19,10 +19,7 @@ function autocmd.load_autocmds()
       {"BufWritePost","*.lua","lua require('core.pack').auto_compile()"};
     },
     bufs = {
-      -- Reload vim config automatically
-      {"BufWritePost",[[$VIM_PATH/{*.vim,*.yaml,vimrc} nested source $MYVIMRC | redraw]]};
       -- Reload Vim script automatically if setlocal autoread
-      {"BufWritePost,FileWritePost","*.vim", [[nested if &l:autoread > 0 | source <afile> | echo 'source ' . bufname('%') | endif]]};
       {"BufWritePre","/tmp/*","setlocal noundofile"};
       {"BufWritePre","COMMIT_EDITMSG","setlocal noundofile"};
       {"BufWritePre","MERGE_MSG","setlocal noundofile"};
@@ -31,12 +28,6 @@ function autocmd.load_autocmds()
     };
 
     wins = {
-      -- Highlight current line only on focused window
-      -- {"WinEnter,BufEnter,InsertLeave", "*", [[if ! &cursorline && &filetype !~# '^\(dashboard\|clap_\)' && ! &pvw | setlocal cursorline | endif]]};
-      -- {"WinLeave,BufLeave,InsertEnter", "*", [[if &cursorline && &filetype !~# '^\(dashboard\|clap_\|NvimTree\)' && ! &pvw | setlocal nocursorline | endif]]};
-      -- {"WinLeave,BufLeave,InsertEnter", "*", [[if &cursorline && &filetype !~# '^\(dashboard\|clap_\|NvimTree\)' && ! &pvw | setlocal nocursorcolumn | endif]]};
-      {"BufEnter", "NvimTree", [[setlocal cursorline]]};
-
       -- Equalize window dimensions when resizing vim window
       {"VimResized", "*", [[tabdo wincmd =]]};
       -- Force write shada on leaving nvim
