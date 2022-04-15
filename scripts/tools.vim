@@ -220,29 +220,6 @@ nnoremap <silent> <Plug>Kwbd :<C-u>Kwbd<CR>
 nmap <C-t>c <Plug>Kwbd
 command! Bd bp\|bd \#
 
-" inoremap (; (<CR>);<C-c>O
-" inoremap (, (<CR>),<C-c>O
-" inoremap {; {<CR>};<C-c>O
-" inoremap {, {<CR>},<C-c>O
-" inoremap [; [<CR>];<C-c>O
-" inoremap [, [<CR>],<C-c>O
-"auto close {
-function! s:CloseBracket()
-    let line = getline('.')
-    if line =~# '^\s*\(struct\|class\|enum\) '
-        return "{\<Enter>};\<Esc>O"
-    elseif searchpair('(', '', ')', 'bmn', '', line('.'))
-        " Probably inside a function call. Close it off.
-        return "{\<Enter>});\<Esc>O"
-    else
-        return "{\<Enter>}\<Esc>O"
-    endif
-endfunction
-inoremap <expr> {<Enter> <SID>CloseBracket()
-
-" forma json" also :%!python3 -m json.tool
-
-
 """""""""""""""""""""""maximizer""""""""""""""""""""""""""""
 fun! s:maximize()
     let t:maximizer_sizes = { 'before': winrestcmd() }
