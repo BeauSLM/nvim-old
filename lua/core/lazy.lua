@@ -138,16 +138,16 @@ vim.defer_fn(function()
   vim.cmd([[doautocmd User LoadLazyPlugin]])
 end, lazy_timer)
 
-vim.defer_fn(function()
-  -- lazyload()
-  local cmd = "TSEnableAll highlight " .. vim.o.ft
-  vim.cmd(cmd)
-  vim.cmd(
-    [[autocmd BufEnter * silent! lua vim.fn.wordcount()['bytes'] < 2048000 then vim.cmd('set syntax=on') local cmd= "TSBufEnable "..vim.o.ft vim.cmd(cmd) lprint(cmd, vim.o.ft, vim.o.syntax) end]]
-  )
-  -- vim.cmd([[doautocmd ColorScheme]])
-  -- vim.cmd(cmd)
-end, lazy_timer + 20)
+-- vim.defer_fn(function()
+--   -- lazyload()
+--   local cmd = "TSEnableAll highlight " .. vim.o.ft
+--   vim.cmd(cmd)
+--   vim.cmd(
+--     [[autocmd BufEnter * silent! lua vim.fn.wordcount()['bytes'] < 2048000 then vim.cmd('set syntax=on') local cmd= "TSBufEnable "..vim.o.ft vim.cmd(cmd) lprint(cmd, vim.o.ft, vim.o.syntax) end]]
+--   )
+--   -- vim.cmd([[doautocmd ColorScheme]])
+--   -- vim.cmd(cmd)
+-- end, lazy_timer + 20)
 
 vim.cmd([[hi LineNr guifg=#505068]])
 
