@@ -27,44 +27,6 @@ local function load_dbs()
   return dbs
 end
 
-function config.diffview()
-  local cb = require"diffview.config".diffview_callback
-  require"diffview".setup {
-    diff_binaries = false, -- Show diffs for binaries
-    use_icons = true, -- Requires nvim-web-devicons
-    enhanced_diff_hl = false, -- See ':h diffview-config-enhanced_diff_hl'
-    signs = {fold_closed = "", fold_open = ""},
-    file_panel = {
-      position = "left", -- One of 'left', 'right', 'top', 'bottom'
-      width = 35, -- Only applies when position is 'left' or 'right'
-      height = 10 -- Only applies when position is 'top' or 'bottom'
-    },
-    key_bindings = {
-      -- The `view` bindings are active in the diff buffers, only when the current
-      -- tabpage is a Diffview.
-      view = {
-        ["<tab>"] = cb("select_next_entry"), -- Open the diff for the next file
-        ["<s-tab>"] = cb("select_prev_entry"), -- Open the diff for the previous file
-        ["<leader>e"] = cb("focus_files"), -- Bring focus to the files panel
-        ["<leader>b"] = cb("toggle_files") -- Toggle the files panel.
-      },
-      file_panel = {
-        ["j"] = cb("next_entry"), -- Bring the cursor to the next file entry
-        ["<down>"] = cb("next_entry"),
-        ["k"] = cb("prev_entry"), -- Bring the cursor to the previous file entry.
-        ["<up>"] = cb("prev_entry"),
-        ["<cr>"] = cb("select_entry"), -- Open the diff for the selected entry.
-        ["o"] = cb("select_entry"),
-        ["R"] = cb("refresh_files"), -- Update stats and entries in the file list.
-        ["<tab>"] = cb("select_next_entry"),
-        ["<s-tab>"] = cb("select_prev_entry"),
-        ["<leader>e"] = cb("focus_files"),
-        ["<leader>b"] = cb("toggle_files")
-      }
-    }
-  }
-end
-
 function config.vim_vista()
   vim.g["vista#renderer#enable_icon"] = 1
   vim.g.vista_disable_statusline = 1
@@ -119,123 +81,6 @@ function config.clap_after()
   end
 end
 
-function config.vgit()
-  -- use this as a diff tool (faster than Diffview)
-  -- there are overlaps with gitgutter. following are nice features
-  require('vgit').setup({
-    keymaps = {
-      ['n <leader>ga'] = 'actions', -- show all commands in telescope
-      ['n <leader>ba'] = 'buffer_gutter_blame_preview', -- show all blames
-      ['n <leader>bp'] = 'buffer_blame_preview', -- buffer diff
-      ['n <leader>bh'] = 'buffer_history_preview', -- buffer commit history DiffviewFileHistory
-      -- ['n <leader>gp'] = 'buffer_staged_diff_preview', -- diff for staged changes
-      ['n <leader>pd'] = 'project_diff_preview' -- diffview is slow
-    },
-    controller = {
-      hunks_enabled = false, -- gitsigns
-      blames_enabled = false,
-      diff_strategy = 'index',
-      diff_preference = 'vertical',
-      predict_hunk_signs = true,
-      predict_hunk_throttle_ms = 500,
-      predict_hunk_max_lines = 50000,
-      blame_line_throttle_ms = 250,
-      show_untracked_file_signs = true,
-      action_delay_ms = 500
-    }
-  })
-  require"packer".loader("telescope.nvim")
-  -- print('vgit')
-  -- require("vgit")._buf_attach()
-end
-
-function config.neogit()
-  require("neogit").setup({
-    disable_signs = false,
-    disable_context_highlighting = false,
-    disable_commit_confirmation = false,
-    -- customize displayed signs
-    signs = {
-      -- { CLOSED, OPENED }
-      section = {">", "v"},
-      item = {">", "v"},
-      hunk = {"", ""}
-    },
-    integrations = {
-      -- Neogit only provides inline diffs. If you want a more traditional way to look at diffs, you can use `sindrets/diffview.nvim`.
-      -- The diffview integration enables the diff popup, which is a wrapper around `sindrets/diffview.nvim`.
-      --
-      -- Requires you to have `sindrets/diffview.nvim` installed.
-      -- use {
-      --   'TimUntersberger/neogit',
-      --   requires = {
-      --     'nvim-lua/plenary.nvim',
-      --     'sindrets/diffview.nvim'
-      --   }
-      -- }
-      --
-      diffview = true
-    },
-    -- override/add mappings
-    mappings = {
-      -- modify status buffer mappings
-      status = {
-        -- Adds a mapping with "B" as key that does the "BranchPopup" command
-        ["B"] = "BranchPopup",
-        -- Removes the default mapping of "s"
-        ["s"] = ""
-      }
-    }
-  })
-end
-
-function config.gitsigns()
-  if not packer_plugins["plenary.nvim"].loaded then
-    require'packer'.loader("plenary.nvim")
-  end
-  require("gitsigns").setup {
-    signs = {
-      add = {hl = "GitGutterAdd", text = "│", numhl = "GitSignsAddNr"},
-      change = {hl = "GitGutterChange", text = "│", numhl = "GitSignsChangeNr"},
-      delete = {hl = "GitGutterDelete", text = "ﬠ", numhl = "GitSignsDeleteNr"},
-      topdelete = {hl = "GitGutterDelete", text = "ﬢ", numhl = "GitSignsDeleteNr"},
-      changedelete = {hl = "GitGutterChangeDelete", text = "┊", numhl = "GitSignsChangeNr"}
-    },
-    numhl = false,
-    keymaps = {
-      -- Default keymap options
-      noremap = true,
-      buffer = true,
-      ["n ]c"] = {expr = true, '&diff ? \']c\' : \'<cmd>lua require"gitsigns".next_hunk()<CR>\''},
-      ["n [c"] = {expr = true, '&diff ? \'[c\' : \'<cmd>lua require"gitsigns".prev_hunk()<CR>\''},
-      ["n <leader>hs"] = '<cmd>lua require"gitsigns".stage_hunk()<CR>',
-      ['v <leader>hs'] = '<cmd>lua require"gitsigns".stage_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
-      ["n <leader>hu"] = '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>',
-      ["n <leader>hr"] = '<cmd>lua require"gitsigns".reset_hunk()<CR>',
-      ['v <leader>hr'] = '<cmd>lua require"gitsigns".reset_hunk({vim.fn.line("."), vim.fn.line("v")})<CR>',
-      ["n <leader>hp"] = '<cmd>lua require"gitsigns".preview_hunk()<CR>',
-      -- ["n <leader>hb"] = '<cmd>lua require"gitsigns".blame_line()<CR>',
-      ["n <leader>bs"] = '<cmd>lua require"gitsigns".stage_buffer()<CR>',
-      ["n <leader>hq"] = '<cmd>lua do vim.cmd("copen") require"gitsigns".setqflist("all") end <CR>', -- hunk qflist with vgit
-      ["o ih"] = ':<C-U>lua require"gitsigns".text_object()<CR>',
-      ["x ih"] = ':<C-U>lua require"gitsigns".text_object()<CR>'
-    },
-    watch_gitdir = {interval = 1000, follow_files = true},
-    sign_priority = 6,
-    status_formatter = nil, -- Use default
-    debug_mode = false,
-    current_line_blame = true,
-    current_line_blame_opts = {delay = 1500},
-    update_debounce = 300,
-    word_diff = true,
-    diff_opts = {internal = true}
-  }
-end
-
-local function round(x)
-  return x >= 0 and math.floor(x + 0.5) or math.ceil(x - 0.5)
-end
-
 function config.bqf()
   require('bqf').setup({
     auto_enable = true,
@@ -255,41 +100,6 @@ function config.bqf()
   })
 end
 
-function config.dapui()
-  vim.cmd([[let g:dbs = {
-  \ 'eraser': 'postgres://postgres:password@localhost:5432/eraser_local',
-  \ 'staging': 'postgres://postgres:password@localhost:5432/my-staging-db',
-  \ 'wp': 'mysql://root@localhost/wp_awesome' }]])
-  require("dapui").setup({
-    icons = {expanded = "⯆", collapsed = "⯈", circular = "↺"},
-
-    mappings = {
-      -- Use a table to apply multiple mappings
-      expand = {"<CR>", "<2-LeftMouse>"},
-      open = "o",
-      remove = "d",
-      edit = "e"
-    },
-    sidebar = {
-      elements = {
-        -- You can change the order of elements in the sidebar
-        "scopes", "stacks", "watches"
-      },
-      width = 40,
-      position = "left" -- Can be "left" or "right"
-    },
-    tray = {
-      elements = {"repl"},
-      height = 10,
-      position = "bottom" -- Can be "bottom" or "top"
-    },
-    floating = {
-      max_height = nil, -- These can be integers or a float between 0 and 1.
-      max_width = nil -- Floats will be treated as percentage of your screen.
-    }
-  })
-end
-
 function config.markdown()
   vim.g.vim_markdown_frontmatter = 1
   vim.g.vim_markdown_strikethrough = 1
@@ -305,35 +115,6 @@ function config.markdown()
   vim.g.vim_markdown_fenced_languages = {
     "c++=javascript", "js=javascript", "json=javascript", "jsx=javascript", "tsx=javascript"
   }
-end
-
---[[
-Use `git ls-files` for git files, use `find ./ *` for all files under work directory.
-]] --
-
-function config.floaterm()
-  -- Set floaterm window's background to black
-  -- Set floating window border line color to cyan, and background to orange
-  vim.g.floaterm_wintype = "float"
-  vim.g.floaterm_width = 0.9
-  vim.g.floaterm_height = 0.9
-  vim.cmd("hi Floaterm guibg=black")
-  -- vim.cmd('hi FloatermBorder guibg=orange guifg=cyan')
-  vim.cmd("command! FZF FloatermNew fzf --autoclose=1")
-  vim.cmd("command! NNN FloatermNew --autoclose=1 --height=0.96 --width=0.96 nnn")
-  vim.cmd("command! FN FloatermNew --autoclose=1 --height=0.96 --width=0.96")
-  vim.cmd("command! LG FloatermNew --autoclose=1 --height=0.96 --width=0.96 lazygit")
-  vim.cmd("command! Ranger FloatermNew --autoclose=1 --height=0.96 --width=0.96 ranger")
-
-  vim.g.floaterm_gitcommit = "split"
-  vim.g.floaterm_keymap_new = "<F19>" -- S-f7
-  vim.g.floaterm_keymap_prev = "<F20>"
-  vim.g.floaterm_keymap_next = "<F21>"
-  vim.g.floaterm_keymap_toggle = "<F24>"
-  -- Use `git ls-files` for git files, use `find ./ *` for all files under work directory.
-  -- vim.cmd([[ command! Sad lua Sad()]])
-  -- grep -rli 'old-word' * | xargs -i@ sed -i 's/old-word/new-word/g' @
-  --  rg -l 'old-word' * | xargs -i@ sed -i 's/old-word/new-word/g' @
 end
 
 function config.spelunker()

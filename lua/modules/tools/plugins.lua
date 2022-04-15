@@ -16,13 +16,7 @@ tools['ThePrimeagen/harpoon'] = {
     require("telescope").load_extension('harpoon')
   end
 }
-tools["TimUntersberger/neogit"] = {
-  cmd = {"Neogit"},
-  config = function()
-    local neogit = require('neogit')
-    neogit.setup {}
-  end
-}
+
 tools["liuchengxu/vista.vim"] = {cmd = "Vista", setup = conf.vim_vista, opt = true}
 
 tools["kamykn/spelunker.vim"] = {
@@ -57,20 +51,6 @@ tools["liuchengxu/vim-clap"] = {
   config = conf.clap_after
 }
 
-tools["sindrets/diffview.nvim"] = {
-  cmd = {
-    "DiffviewOpen", "DiffviewFileHistory", "DiffviewFocusFiles", "DiffviewToggleFiles",
-    "DiffviewRefresh"
-  },
-  config = conf.diffview
-}
-
-tools["lewis6991/gitsigns.nvim"] = {
-  config = conf.gitsigns,
-  -- keys = {']c', '[c'},  -- load by lazy.lua
-  opt = true
-}
-
 local path = plugin_folder()
 tools[path .. "sad.nvim"] = {
   cmd = {'Sad'},
@@ -86,17 +66,6 @@ tools[path .. "viewdoc.nvim"] = {
   config = function()
     require'viewdoc'.setup({debug = true, log_path = "~/tmp/neovim_debug.log"})
   end
-}
-
--- early stage...
-tools['tanvirtin/vgit.nvim'] = { -- gitsign has similar features
-  setup = function()
-    vim.o.updatetime = 2000
-  end,
-  cmd = {'VGit'},
-  -- after = {"telescope.nvim"},
-  opt = true,
-  config = conf.vgit
 }
 
 tools['kevinhwang91/nvim-bqf'] = {

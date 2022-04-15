@@ -71,7 +71,7 @@ function Lazyload()
 
   local gitrepo = vim.fn.isdirectory(".git/index")
   if gitrepo then
-    loader("gitsigns.nvim vim-fugitive gv.vim")  -- vgit.nvim
+    loader("vim-fugitive gv.vim")  -- vgit.nvim
   end
 
   if load_lsp then
