@@ -19,7 +19,6 @@ user["shumphrey/fugitive-gitlab.vim"] = {
   after = "vim-fugitive"
 }
 
--- TODO: settings!
 user["abecodes/tabout.nvim"] = {
   opt = true,
   after = {"nvim-treesitter"},
@@ -28,19 +27,6 @@ user["abecodes/tabout.nvim"] = {
       completion = false,
     }
   end,
-}
-
-user["nvim-lualine/lualine.nvim"] = {
-  disable = true,
-  opt = true,
-  after = "nvim-web-devicons",
-  event = "UIEnter",
-  config = conf.lualine,
-}
-
-user["svban/YankAssassin.vim"] = {
-  opt = true,
-  event = "VimEnter"
 }
 
 user["fraserlee/ScratchPad"] = {}
