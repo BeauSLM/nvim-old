@@ -124,85 +124,7 @@ local treesitter_obj = function()
         }
     }
 
-    -- vim.api.nvim_command("setlocal foldmethod=expr")
-    -- vim.api.nvim_command("setlocal foldexpr=nvim_treesitter#foldexpr()")
-    -- print("loading ts")
     vim.cmd([[syntax on]])
-end
-
-local treesitter_ref = function()
-
-    lprint("loading treesitter refactor")
-
-    if vim.fn.line('$') > 10000 then -- skip for large file
-        -- vim.cmd[[syntax on]]
-        print('skip treesitter')
-        enable = false
-    end
-    -- print('load treesitter refactor', vim.fn.line('$'))
-
-    require"nvim-treesitter.configs".setup {
-        refactor = {
-            highlight_definitions = {enable = enable},
-            highlight_current_scope = {enable = enable},
-            smart_rename = {
-                enable = false,
-                keymaps = {
-                    smart_rename = "<Leader>gr" -- mapping to rename reference under cursor
-                }
-            },
-            navigation = {
-                enable = false, -- use navigator
-                keymaps = {
-                    goto_definition = "gnd", -- mapping to go to definition of symbol under cursor
-                    list_definitions = "gnD", -- mapping to list all definitions in current file
-                    list_definitions_toc = "gO" -- gT navigator
-                    -- goto_next_usage = "<c->>",
-                    -- goto_previous_usage = "<c-<>",
-                }
-            }
-        },
-        matchup = {
-            enable = false, -- mandatory, false will disable the whole extension
-            disable = {'ruby'} -- optional, list of language that will be disabled
-        },
-        autopairs = {enable = true},
-        autotag = {enable = true}
-    }
-    local parser_config = require"nvim-treesitter.parsers".get_parser_configs()
-    parser_config.sql = {
-        install_info = {
-            url = vim.fn.expand("$HOME") .. "/github/nvim-treesitter/tree-sitter-sql", -- local path or git repo
-            files = {"src/parser.c"}
-        },
-        filetype = "sql", -- if filetype does not agrees with parser name
-        used_by = {"psql", "pgsql"} -- additional filetypes that use this parser
-    }
-    parser_config.proto = {
-        install_info = {
-            url = vim.fn.expand("$HOME") .. "/github/nvim-treesitter/tree-sitter-proto", -- local path or git repo
-            files = {"src/parser.c"}
-        },
-        filetype = "proto", -- if filetype does not agrees with parser name
-        used_by = {"proto"} -- additional filetypes that use this parser
-    }
-
-    parser_config.norg = {
-        install_info = {
-            url = "https://github.com/nvim-neorg/tree-sitter-norg",
-            files = {"src/parser.c", "src/scanner.cc"},
-            branch = "main"
-        }
-    }
-end
-
-function textsubjects()
-    require'nvim-treesitter.configs'.setup {
-        textsubjects = {
-            enable = true,
-            keymaps = {['<S-.>'] = 'textsubjects-smart', [';'] = 'textsubjects-container-outer'}
-        }
-    }
 end
 
 -- treesitter()
@@ -210,6 +132,4 @@ end
 return {
     treesitter = treesitter,
     treesitter_obj = treesitter_obj,
-    treesitter_ref = treesitter_ref,
-    textsubjects = textsubjects
 }

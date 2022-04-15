@@ -17,10 +17,6 @@ function config.nvim_cmp()
     -- {name = 'buffer', keyword_length = 4} {name = 'path'}, {name = 'look'},
     -- {name = 'calc'}, {name = 'ultisnips'} { name = 'snippy' }
   }
-  if vim.o.ft == 'sql' then
-    table.insert(sources, {name = 'vim-dadbod-completion'})
-  end
-
   if vim.o.ft == 'norg' then
     table.insert(sources, {name = 'neorg'})
   end

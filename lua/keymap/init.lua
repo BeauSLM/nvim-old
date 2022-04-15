@@ -26,9 +26,6 @@ local plug_map = {
   -- ["n|<Leader>e"]      = map_cr('NvimTreeToggle'):with_noremap():with_silent(),
   -- ["n|<Leader>F"] = map_cr('NvimTreeFindFile'):with_noremap():with_silent(),
   -- Plugin MarkdownPreview
-  ["n|<Leader>om"] = map_cu('MarkdownPreview'):with_noremap():with_silent(),
-  -- Plugin DadbodUI
-  ["n|<Leader>od"] = map_cr('DBUIToggle'):with_noremap():with_silent(),
   -- Plugin Telescope
   ["n|<Leader>bb"] = map_cu('Telescope buffers'):with_noremap():with_silent(),
   ["n|<Leader>fb"] = map_cu('Telescope file_browser'):with_noremap():with_silent(),

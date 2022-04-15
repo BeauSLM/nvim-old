@@ -39,11 +39,6 @@ editor["numToStr/Comment.nvim"] = {
 editor["AndrewRadev/splitjoin.vim"] = {
   opt = true,
   cmd = {"SplitjoinJoin", "SplitjoinSplit"},
-  setup = function()
-    vim.g.splitjoin_split_mapping = ""
-    vim.g.splitjoin_join_mapping = ""
-  end
-  -- keys = {'<space>S', '<space>J'}
 }
 
 editor["chaoren/vim-wordmotion"] = {
