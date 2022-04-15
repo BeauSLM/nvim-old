@@ -43,4 +43,5 @@ user["svban/YankAssassin.vim"] = {
   event = "VimEnter"
 }
 
+user["fraserlee/ScratchPad"] = {}
 return user
