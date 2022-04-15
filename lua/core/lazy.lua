@@ -152,7 +152,7 @@ vim.cmd([[hi LineNr guifg=#505068]])
 
 vim.defer_fn(function()
   local loader = require("packer").loader
-  loader("telescope.nvim telescope-zoxide project.nvim")
+  loader("telescope.nvim")
   loader("neogen harpoon")
   loader("windline.nvim")
   require("modules.ui.eviline")

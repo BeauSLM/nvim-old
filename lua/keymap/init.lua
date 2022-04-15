@@ -37,7 +37,6 @@ local plug_map = {
   ["n|<Leader>fr"] = map_cmd('<cmd>Telescope registers<cr>'):with_noremap():with_silent(),
   ["n|<Leader>fj"] = map_cmd('<cmd>lua require"utils.telescope".jump()<CR>'):with_noremap():with_silent(),
   ["n|<Leader>cl"] = map_cr('<cmd>lua require("telescope").extensions.neoclip.default()'):with_silent(),
-  ["n|<Leader>fz"] = map_cr('<cmd>lua require("telescope").extensions.zoxide.list()'):with_silent(),
   ["n|<Leader>fp"] = map_cr('<cmd>lua require("telescope").extensions.projects.projects()'):with_silent(),
   ["n|<Leader>fw"] = map_cu('Telescope grep_string'):with_noremap():with_silent(),
   ["n|<Leader>fl"] = map_cu('Telescope loclist'):with_noremap():with_silent(),

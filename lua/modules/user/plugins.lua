@@ -29,5 +29,5 @@ user["abecodes/tabout.nvim"] = {
   end,
 }
 
-user["fraserlee/ScratchPad"] = {}
+user["fraserlee/ScratchPad"] = {disable = true,}
 return user

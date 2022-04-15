@@ -15,19 +15,6 @@ local function load_env_file()
   return env_contents
 end
 
-function config.session()
-  local opts = {
-    log_level = 'info',
-    auto_session_enable_last_session = false,
-    auto_session_root_dir = vim.fn.stdpath('data') .. "/sessions/",
-    auto_session_enabled = true,
-    auto_save_enabled = nil,
-    auto_restore_enabled = nil,
-    auto_session_suppress_dirs = nil
-  }
-  require('auto-session').setup(opts)
-end
-
 local function load_dbs()
   local env_contents = load_env_file()
   local dbs = {}
@@ -142,21 +129,6 @@ function config.clap_after()
   if not packer_plugins["nvim-cmp"].loaded then
     require"packer".loader("nvim-cmp")
   end
-end
-
-function config.project()
-    require("project_nvim").setup {
-      datapath = vim.fn.stdpath("data"),
-      ignore_lsp = {'efm'},
-      exclude_dirs = {"~/.cargo/*"},
-      silent_chdir = false
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-    require 'utils.telescope'
-    require('telescope').load_extension('projects')
-
 end
 
 function config.vgit()
