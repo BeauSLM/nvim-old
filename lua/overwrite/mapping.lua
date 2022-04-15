@@ -41,8 +41,9 @@ local keys = {
   ["n|<Leader>m"] = map_cr("MaximizerToggle"),
 
   -- symbols navigation
-  ["n|<Leader>sp"] = map_cu("Clap proj_tags"):with_noremap():with_silent(),
-  ["n|<Leader>ss"] = map_cu("ClapTags"):with_noremap():with_silent(),
+  ["n|<Leader>sp"] = map_cu("lua require'telescope.builtin'.lsp_workspace_symbols()"):with_noremap():with_silent(),
+  ["n|<Leader>ss"] = map_cu("lua require'telescope.builtin'.treesitter()"):with_noremap():with_silent(),
+  -- ["n|<Leader>ss"] = map_cu("lua require'telescope.builtin'.lsp_document_symbols()"):with_noremap():with_silent(),
 
   -- harpoon navigation
   ["n|<Leader>a"] = map_cr("lua require'harpoon.mark'.toggle_file()"),
@@ -101,7 +102,6 @@ vim.cmd([[vnoremap K :m '<-2<CR>gv=gv]])
 bind.nvim_load_mapping(keys)
 
 vim.cmd([[command! -nargs=*  HpoonClear lua require"harpoon.mark".clear_all()]])
-vim.cmd([[command! -nargs=*  ClapTags lua if not packer_plugins["vista.vim"].loaded then require"packer".loader("vista.vim") end vim.cmd("Clap tags")]])
 -- Use `git ls-files` for git files, use `find ./ *` for all files under work directory.
 --
 return K
