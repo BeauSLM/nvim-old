@@ -65,7 +65,6 @@ function Lazyload()
   loader("plenary.nvim")
 
   if vim.bo.filetype == "lua" then
-    loader("lua-dev.nvim")
   end
 
   vim.g.vimsyn_embed = "lPr"
