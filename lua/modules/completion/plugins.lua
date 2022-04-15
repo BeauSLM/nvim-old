@@ -2,24 +2,15 @@ local completion = {}
 local conf = require("modules.completion.config")
 
 completion["neovim/nvim-lspconfig"] = {
-  -- event = 'BufRead',
-  -- ft = {'html','css', 'javascript', 'java', 'javascriptreact', 'vue','typescript', 'typescriptreact', 'go', 'lua', 'cpp', 'c',
-  -- 'markdown', 'makefile','python','bash', 'sh', 'php', 'yaml', 'json', 'sql', 'vim', 'sh'},
-  config = conf.nvim_lsp,
-  -- event = 'CursorHold',
   opt = true,
 }
 
 if load_coq() then
   completion["ms-jpq/coq_nvim"] = {
-    -- opt = true,
-    -- ft = {'html','css', 'javascript', 'java', 'typescript', 'typescriptreact','go', 'python', 'cpp', 'c', 'rust'},
-    -- event = "InsertCharPre",
     after = { "coq.artifacts" },
     branch = "coq",
     setup = function()
       vim.g.coq_settings = { auto_start = false }
-      -- vim.g.coq_settings = { auto_start = false, ['display.icons.mode'] = 'short', ['display.pum.kind_context'] = {'',''}, ['display.pum.source_context'] = {'',''} , ['display.pum.fast_close'] = false}
     end,
     config = function()
       vim.g.coq_settings = {
@@ -97,15 +88,6 @@ completion["L3MON4D3/LuaSnip"] = { -- need to be the first to load
   requires = { "rafamadriz/friendly-snippets", event = "InsertEnter" }, -- , event = "InsertEnter"
   config = conf.luasnip,
 }
-completion["kristijanhusak/vim-dadbod-completion"] = {
-  event = "InsertEnter",
-  ft = { "sql" },
-  setup = function()
-    vim.cmd([[autocmd FileType sql setlocal omnifunc=vim_dadbod_completion#omni]])
-    -- vim.cmd([[autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })]])
-    -- body
-  end,
-}
 
 completion["nvim-telescope/telescope.nvim"] = {
   cmd = "Telescope",
@@ -118,26 +100,6 @@ completion["nvim-telescope/telescope.nvim"] = {
     { "nvim-telescope/telescope-live-grep-raw.nvim", opt = true },
   },
   opt = true,
-}
-
-completion["mattn/emmet-vim"] = {
-  event = "InsertEnter",
-  ft = {
-    "html",
-    "css",
-    "javascript",
-    "javascriptreact",
-    "vue",
-    "typescript",
-    "typescriptreact",
-    "scss",
-    "sass",
-    "less",
-    "jade",
-    "haml",
-    "elm",
-  },
-  setup = conf.emmet,
 }
 
 -- note: part of the code is used in navigator

@@ -1,11 +1,6 @@
 local global = require 'core.global'
 local config = {}
 
-function config.nvim_lsp()
-  local lspclient = require("modules.completion.lsp")
-  lspclient.setup()
-end
-
 function config.nvim_cmp()
   local cmp = require('cmp')
 
@@ -108,10 +103,6 @@ function config.nvim_cmp()
   -- end
 end
 
-function config.vim_vsnip()
-  vim.g.vsnip_snippet_dir = global.home .. "/.config/nvim/snippets"
-end
-
 function config.luasnip()
   local ls = require "luasnip"
   ls.config.set_config {history = true, updateevents = "TextChanged,TextChangedI"}
@@ -132,20 +123,10 @@ function config.telescope_preload()
   if not packer_plugins["plenary.nvim"].loaded then
     require"packer".loader("plenary.nvim")
   end
-  -- if not packer_plugins["telescope-fzy-native.nvim"].loaded then
-  --   require"packer".loader("telescope-fzy-native.nvim")
-  -- end
 end
 
 function config.telescope()
   require("utils.telescope").setup()
-end
-
-function config.emmet()
-  vim.g.user_emmet_complete_tag = 1
-  -- vim.g.user_emmet_install_global = 1
-  vim.g.user_emmet_install_command = 0
-  vim.g.user_emmet_mode = "a"
 end
 
 return config
