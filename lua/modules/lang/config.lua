@@ -53,7 +53,7 @@ function config.navigator()
   --   luadev = l.setup(cfg)
   -- end
 
-  local sumneko_root_path = vim.fn.expand("$HOME") .. "/Code/Source_Installs/lua-language-server"
+  local sumneko_root_path = vim.fn.expand("$SOURCE_INSTALLS") .. "/lua-language-server"
   local sumneko_binary = sumneko_root_path .. "/bin/Linux/lua-language-server"
   luadev.sumneko_root_path = sumneko_root_path
   luadev.sumneko_binary = sumneko_binary
