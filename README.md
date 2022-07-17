@@ -1,4 +1,9 @@
 # A note from me:
+
+I am no longer maintaining this repository, I HIGHLY recommend anyone interested in this takes a look at the repo
+I forked, it is an EXCELLENT setup. I've chosen to use a smaller simpler setup as I'm simply not very proficient
+in lua or the neovim API.
+
 This is a fork of https://github.com/ray-x/nvim, please check their setup. I have pretty extensively adjusted
 this to my preference. I maintain this strictly for my own use, and cannot guarantee that it'll work on any platform
 or work at all. If you're interested in using a similar setup, I suggest checking out the original, its fantastic.  
